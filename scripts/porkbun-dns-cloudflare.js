@@ -57,7 +57,13 @@ async function listRecords() {
   return data.records || [];
 }
 
+function isApexOrWww(rec) {
+  const name = String(rec.name || '').toLowerCase();
+  return name === '' || name === '@' || name === 'www' || name === DOMAIN.toLowerCase();
+}
+
 function isGithubPagesRecord(rec) {
+  if (!isApexOrWww(rec)) return false;
   const content = String(rec.content || '').toLowerCase();
   if (rec.type === 'CNAME' && content.includes('github.io')) return true;
   if (rec.type === 'A' && content.startsWith('185.199.')) return true;
