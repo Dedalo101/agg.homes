@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marbella Match — Find your home on the Costa del Sol</title>
+<meta name="description" content="Personal introductions to trusted local agents in Marbella, Nueva Andalucía, Estepona and Benahávis. One conversation, the right specialist for your search.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#1C1C1A;
+    --ink-soft:#5A5854;
+    --paper:#FFFFFF;
+    --cream:#F7F5F1;
+    --line:#E6E2DA;
+    --gold:#A8895C;
+    --serif:'Cormorant Garamond', serif;
+    --sans:'Inter', sans-serif;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+
+  span[data-i18n], strong[data-i18n], em[data-i18n]{display:none;}
+  html[data-lang="en"] [data-i18n="en"]{display:revert;}
+  html[data-lang="nl"] [data-i18n="nl"]{display:revert;}
+
+  header{
+    position:absolute;top:0;left:0;right:0;z-index:50;
+    padding:32px 48px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:var(--serif);
+    font-size:26px;font-weight:500;letter-spacing:0.04em;
+    color:#FFF;
+  }
+  .logo em{font-style:italic;color:var(--gold);}
+
+  .lang-toggle{display:flex;gap:8px;}
+  .lang-toggle button{
+    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.08em;
+    padding:6px 14px;border:1px solid rgba(255,255,255,0.35);background:transparent;
+    color:#FFF;cursor:pointer;border-radius:0;
+    transition:background 0.15s, color 0.15s, border-color 0.15s;
+  }
+  .lang-toggle button.active{background:#FFF;color:var(--ink);border-color:#FFF;}
+
+  .hero{
+    position:relative;
+    height:100vh;min-height:640px;
+    display:flex;align-items:center;
+    background:
+      linear-gradient(180deg, rgba(20,20,18,0.15) 0%, rgba(20,20,18,0.55) 100%),
+      url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:'';position:absolute;inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 30% 85%, rgba(0,0,0,0.18), transparent 70%);
+  }
+  .hero-content{
+    position:relative;z-index:2;
+    max-width:1280px;margin:0 auto;padding:0 48px;
+    width:100%;
+    color:#FFF;
+  }
+  .hero-eyebrow{
+    font-size:13px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
+    margin-bottom:24px;color:rgba(255,255,255,0.85);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(48px, 8vw, 104px);
+    font-weight:500;line-height:1.05;
+    letter-spacing:0.01em;
+    max-width:18ch;
+    margin-bottom:28px;
+  }
+  .hero h1 em{font-style:italic;font-weight:400;}
+  .hero p{
+    font-size:18px;font-weight:300;color:rgba(255,255,255,0.92);
+    max-width:42ch;margin-bottom:36px;
+  }
+  .hero p strong{font-weight:500;}
+
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;
+    padding:17px 36px;
+    cursor:pointer;border:1px solid transparent;
+    transition:background 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .btn-primary{background:#FFF;color:var(--ink);}
+  .btn-primary:hover{background:var(--gold);color:#FFF;}
+  .btn-ghost{background:transparent;color:#FFF;border-color:rgba(255,255,255,0.5);}
+  .btn-ghost:hover{border-color:#FFF;background:rgba(255,255,255,0.1);}
+
+  .scroll-cue{
+    position:absolute;bottom:36px;left:48px;z-index:2;
+    color:rgba(255,255,255,0.7);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;
+    display:flex;align-items:center;gap:12px;
+  }
+  .scroll-cue::after{
+    content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,0.5);
+  }
+
+  .agent-band{
+    background:var(--cream);
+    padding:80px 48px;
+  }
+  .agent-band-inner{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center;
+  }
+  .agent-photo{
+    width:100%;aspect-ratio:1;object-fit:cover;
+    background:#D8D2C4;
+  }
+  .agent-text .kicker{
+    font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;
+  }
+  .agent-text h2{
+    font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;
+    line-height:1.25;margin-bottom:18px;letter-spacing:0.005em;
+  }
+  .agent-text p{font-size:16px;color:var(--ink-soft);max-width:60ch;}
+  .agent-text .agent-name-row{
+    display:flex;align-items:baseline;gap:16px;margin-top:24px;flex-wrap:wrap;
+  }
+  .agent-text .agent-name-row .name{
+    font-family:var(--serif);font-size:22px;font-weight:500;
+  }
+  .agent-text .agent-name-row .langs{
+    font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;
+  }
+
+  .section{padding:96px 48px;}
+  .section-inner{max-width:1280px;margin:0 auto;}
+  .section-header{
+    text-align:center;max-width:680px;margin:0 auto 72px;
+  }
+  .section-header .kicker{
+    font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;
+  }
+  .section-header h2{
+    font-family:var(--serif);font-size:clamp(32px,5vw,52px);font-weight:500;
+    line-height:1.2;letter-spacing:0.005em;
+  }
+
+  .how-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+    border-top:1px solid var(--line);
+  }
+  .how-step{
+    padding:48px 40px;border-right:1px solid var(--line);
+    text-align:center;
+  }
+  .how-grid .how-step:last-child{border-right:none;}
+  .how-step .roman{
+    font-family:var(--serif);font-size:15px;font-weight:500;letter-spacing:0.3em;
+    color:var(--gold);margin-bottom:24px;
+  }
+  .how-step h3{
+    font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:14px;
+  }
+  .how-step p{font-size:15px;color:var(--ink-soft);}
+
+  .areas-section{background:var(--cream);}
+  .properties-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .property-card{
+    background:var(--paper);border:1px solid var(--line);
+    display:flex;flex-direction:column;
+    transition:border-color 0.2s;
+    color:var(--ink);
+  }
+  .property-card:hover{border-color:var(--gold);}
+  .property-photo{
+    aspect-ratio:4/3;position:relative;overflow:hidden;
+    background-size:cover;background-position:center;
+  }
+  .property-photo::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(20,20,18,0.15) 0%, transparent 40%);
+  }
+  .property-price{
+    position:absolute;bottom:16px;left:16px;z-index:1;
+    background:rgba(255,255,255,0.95);color:var(--ink);
+    font-family:var(--serif);font-size:20px;font-weight:600;
+    padding:6px 16px;
+  }
+  .property-card.c1 .property-photo{background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop');}
+  .property-card.c2 .property-photo{background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop');}
+  .property-card.c3 .property-photo{background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop');}
+  .property-card.c4 .property-photo{background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop');}
+  .property-card.c5 .property-photo{background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop');}
+  .property-card.c6 .property-photo{background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop');}
+  .property-info{padding:24px;flex:1;display:flex;flex-direction:column;}
+  .property-info .location{
+    font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:8px;
+  }
+  .property-info h3{
+    font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.3;
+    margin-bottom:12px;
+  }
+  .property-meta{
+    display:flex;gap:16px;font-size:13px;color:var(--ink-soft);
+    margin-top:auto;padding-top:16px;border-top:1px solid var(--line);
+  }
+  .property-meta span{display:flex;align-items:center;gap:4px;}
+
+  .network-section{padding:96px 48px;}
+  .network-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .network-visual{border:1px solid var(--line);padding:48px;}
+  .network-visual .you-row{
+    display:flex;align-items:center;gap:16px;margin-bottom:32px;padding-bottom:32px;
+    border-bottom:1px solid var(--line);
+  }
+  .network-visual .you-circle{
+    width:48px;height:48px;border-radius:50%;background:var(--ink);color:#FFF;
+    display:flex;align-items:center;justify-content:center;
+    font-family:var(--serif);font-size:16px;font-weight:500;flex-shrink:0;
+  }
+  .network-visual .you-label{font-size:13px;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-soft);}
+  .network-visual .you-label strong{display:block;font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ink);letter-spacing:0;text-transform:none;margin-top:4px;}
+
+  .partner-row{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:16px 0;border-bottom:1px solid var(--line);font-size:15px;
+    color:var(--ink);transition:padding-left 0.15s, color 0.15s;
+  }
+  .partner-row:hover{padding-left:8px;color:var(--gold);}
+  .partner-row:last-child{border-bottom:none;}
+  .partner-row .name{font-family:var(--serif);font-size:18px;font-weight:500;}
+  .partner-row .spec{font-size:13px;color:var(--ink-soft);}
+
+  .network-text .kicker{
+    font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;
+  }
+  .network-text h2{
+    font-family:var(--serif);font-size:clamp(32px,4.5vw,48px);font-weight:500;
+    line-height:1.2;margin-bottom:20px;
+  }
+  .network-text p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;max-width:48ch;}
+
+  .stat-row{display:flex;gap:48px;margin-top:32px;}
+  .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold);line-height:1;margin-bottom:6px;}
+  .stat .label{font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;}
+
+  .form-section{
+    background:var(--cream);color:var(--ink);
+    padding:96px 48px;
+  }
+  .form-grid{
+    max-width:1280px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1.1fr;gap:80px;align-items:start;
+  }
+  .form-grid .kicker{
+    font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;
+  }
+  .form-grid h2{
+    font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);font-weight:500;
+    line-height:1.15;margin-bottom:20px;
+  }
+  .form-grid > div:first-child p{font-size:16px;color:var(--ink-soft);max-width:40ch;}
+
+  .form-card{
+    background:var(--paper);padding:48px;border:1px solid var(--line);
+  }
+
+  .field{margin-bottom:22px;}
+  .field label{
+    display:block;font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:10px;
+  }
+  .field input, .field select, .field textarea{
+    width:100%;padding:13px 16px;
+    border:1px solid var(--line);
+    background:var(--paper);font-family:var(--sans);font-size:15px;color:var(--ink);
+    border-radius:2px;
+  }
+  .field select{cursor:pointer;}
+  .field input::placeholder, .field textarea::placeholder{color:#B8B3A8;}
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:none;border-color:var(--gold);
+  }
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+
+  .form-grid .btn-primary{
+    width:100%;justify-content:center;margin-top:8px;
+    background:var(--ink);color:#FFF;
+  }
+  .form-grid .btn-primary:hover{background:var(--gold);color:#FFF;}
+
+  .form-note{font-size:13px;color:var(--ink-soft);margin-top:20px;}
+
+  .form-success{
+    display:none;background:#F2EDE3;border:1px solid var(--gold);
+    color:var(--ink);padding:16px 20px;font-size:14px;font-weight:500;margin-bottom:24px;
+  }
+  .form-success[data-fs-visible]{display:block;}
+  .form-error{display:none;color:#B5453F;font-size:13px;margin-top:-10px;margin-bottom:16px;}
+  .form-error[data-fs-visible]{display:block;}
+  .field-error{display:block;color:#B5453F;font-size:12px;margin-top:6px;}
+  [aria-invalid="true"]{border-color:#B5453F !important;}
+
+  footer{padding:40px 48px;background:var(--ink);color:rgba(255,255,255,0.5);border-top:1px solid rgba(255,255,255,0.1);}
+  .footer-inner{
+    max-width:1280px;margin:0 auto;
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    font-size:13px;
+  }
+  .footer-inner a{color:var(--gold);font-weight:500;}
+
+  @media (max-width:980px){
+    header{padding:24px;}
+    .hero-content{padding:0 24px;}
+    .hero h1{font-size:clamp(40px,11vw,72px);}
+    .agent-band{padding:56px 24px;}
+    .agent-band-inner{grid-template-columns:1fr;gap:32px;}
+    .agent-photo{max-width:220px;}
+    .section{padding:64px 24px;}
+    .how-grid{grid-template-columns:1fr;border-top:none;}
+    .how-step{border-right:none;border-top:1px solid var(--line);padding:40px 0;}
+    .properties-grid{grid-template-columns:1fr 1fr;gap:20px;}
+    .network-section{padding:64px 24px;}
+    .network-grid{grid-template-columns:1fr;gap:48px;}
+    .stat-row{gap:32px;}
+    .form-section{padding:64px 24px;}
+    .form-grid{grid-template-columns:1fr;gap:48px;}
+    .field-row{grid-template-columns:1fr;}
+    .form-card{padding:28px;}
+    .scroll-cue{display:none;}
+  }
+  @media (max-width:560px){
+    .properties-grid{grid-template-columns:1fr;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition:none !important;}
+  }
+
+  a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Marbella <em>Match</em></div>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-set-lang="en" class="active">EN</button>
+    <button type="button" data-set-lang="nl">NL</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span data-i18n="en">Costa del Sol &mdash; since 2011</span>
+      <span data-i18n="nl">Costa del Sol &mdash; sinds 2011</span>
+    </div>
+    <h1>
+      <span data-i18n="en">Find the <em>right agent</em> for your search</span>
+      <span data-i18n="nl">Vind de <em>juiste makelaar</em> voor uw zoektocht</span>
+    </h1>
+    <p>
+      <span data-i18n="en">I'm <strong>A. Gonzalez</strong>, an independent property consultant based in Marbella. Tell me what you're looking for &mdash; I'll personally introduce you to the local specialist best placed to find it.</span>
+      <span data-i18n="nl">Ik ben <strong>A. Gonzalez</strong>, een onafhankelijk woonadviseur in Marbella. Vertel me waar u naar zoekt &mdash; ik introduceer u persoonlijk bij de lokale specialist die het beste bij u past.</span>
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">
+        <span data-i18n="en">Start your search</span>
+        <span data-i18n="nl">Start uw zoektocht</span>
+      </a>
+      <a href="#how" class="btn btn-ghost">
+        <span data-i18n="en">How this works</span>
+        <span data-i18n="nl">Hoe het werkt</span>
+      </a>
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <span data-i18n="en">Scroll</span>
+    <span data-i18n="nl">Scroll</span>
+  </div>
+</section>
+
+<section class="agent-band">
+  <div class="agent-band-inner">
+    <img class="agent-photo" src="photo.png" alt="A. Gonzalez">
+    <div class="agent-text">
+      <div class="kicker">
+        <span data-i18n="en">Your local contact</span>
+        <span data-i18n="nl">Uw lokale contact</span>
+      </div>
+      <h2>
+        <span data-i18n="en">A trusted introduction, before you ever speak to an agency</span>
+        <span data-i18n="nl">Een vertrouwde introductie, voordat u contact heeft met een makelaarskantoor</span>
+      </h2>
+      <p>
+        <span data-i18n="en">Buying property abroad starts with knowing who to call. I work with a small group of established Marbella agencies, and I make sure you're introduced to the one that actually fits what you're looking for &mdash; not whichever picks up the phone first.</span>
+        <span data-i18n="nl">Een woning kopen in het buitenland begint met weten wie u moet bellen. Ik werk samen met een aantal gevestigde makelaars in Marbella en zorg dat u wordt ge&iuml;ntroduceerd bij degene die echt bij u past &mdash; niet bij wie het eerst opneemt.</span>
+      </p>
+      <div class="agent-name-row">
+        <span class="name">A. Gonzalez</span>
+        <span class="langs">Nederlands &middot; English &middot; Espa&ntilde;ol</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="how">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        <span data-i18n="en">How it works</span>
+        <span data-i18n="nl">Hoe het werkt</span>
+      </div>
+      <h2>
+        <span data-i18n="en">One conversation. The right introduction.</span>
+        <span data-i18n="nl">E&eacute;n gesprek. De juiste introductie.</span>
+      </h2>
+    </div>
+
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="roman">I</div>
+        <h3>
+          <span data-i18n="en">Tell me what you need</span>
+          <span data-i18n="nl">Vertel me wat u zoekt</span>
+        </h3>
+        <p>
+          <span data-i18n="en">Area, budget, property type and timeline &mdash; in Dutch or English, whichever you prefer.</span>
+          <span data-i18n="nl">Locatie, budget, type woning en planning &mdash; in het Nederlands of Engels, wat u prettiger vindt.</span>
+        </p>
+      </div>
+      <div class="how-step">
+        <div class="roman">II</div>
+        <h3>
+          <span data-i18n="en">I match you to a specialist</span>
+          <span data-i18n="nl">Ik koppel u aan een specialist</span>
+        </h3>
+        <p>
+          <span data-i18n="en">Each partner agency is strong in a different area and price range, chosen based on what you're actually looking for.</span>
+          <span data-i18n="nl">Elk partnerkantoor is sterk in een eigen gebied en prijsklasse, gekozen op basis van wat u echt zoekt.</span>
+        </p>
+      </div>
+      <div class="how-step">
+        <div class="roman">III</div>
+        <h3>
+          <span data-i18n="en">You're introduced directly</span>
+          <span data-i18n="nl">U wordt direct ge&iuml;ntroduceerd</span>
+        </h3>
+        <p>
+          <span data-i18n="en">No extra fees for you &mdash; the right agency follows up quickly, with full context on what you're after.</span>
+          <span data-i18n="nl">Geen extra kosten voor u &mdash; het juiste kantoor neemt snel contact op, met alle context over wat u zoekt.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section areas-section">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        <span data-i18n="en">Featured properties</span>
+        <span data-i18n="nl">Uitgelichte woningen</span>
+      </div>
+      <h2>
+        <span data-i18n="en">A sample of what's available right now</span>
+        <span data-i18n="nl">Een greep uit het huidige aanbod</span>
+      </h2>
+    </div>
+
+    <!-- PROPERTIES-GRID: each .property-card corresponds to one Resales Online listing.
+         Once API access is wired up, generate these cards from the feed:
+         photo -> listing main image, location -> area, h3 -> title,
+         price -> listing price, meta -> beds/baths/m2, href -> listing detail link -->
+    <div class="properties-grid">
+      <a class="property-card c1" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;1,250,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">Benah&aacute;vis</div>
+          <h3>
+            <span data-i18n="en">Modern villa with panoramic sea views</span>
+            <span data-i18n="nl">Moderne villa met panoramisch zeezicht</span>
+          </h3>
+          <div class="property-meta">
+            <span>4 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>3 <span data-i18n="en">baths</span><span data-i18n="nl">badk.</span></span>
+            <span>320 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+      <a class="property-card c2" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;485,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">Estepona</div>
+          <h3>
+            <span data-i18n="en">New-build apartment near the beach</span>
+            <span data-i18n="nl">Nieuwbouwappartement nabij het strand</span>
+          </h3>
+          <div class="property-meta">
+            <span>2 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>2 <span data-i18n="en">baths</span><span data-i18n="nl">badk.</span></span>
+            <span>98 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+      <a class="property-card c3" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;2,950,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">Marbella Golden Mile</div>
+          <h3>
+            <span data-i18n="en">Frontline beach penthouse with terrace</span>
+            <span data-i18n="nl">Penthouse aan het strand met terras</span>
+          </h3>
+          <div class="property-meta">
+            <span>3 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>3 <span data-i18n="en">baths</span><span data-i18n="nl">badk.</span></span>
+            <span>210 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+      <a class="property-card c4" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;695,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">Nueva Andaluc&iacute;a</div>
+          <h3>
+            <span data-i18n="en">Townhouse in Golf Valley with garden</span>
+            <span data-i18n="nl">Rijwoning in Golf Valley met tuin</span>
+          </h3>
+          <div class="property-meta">
+            <span>3 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>2 <span data-i18n="en">baths</span><span data-i18n="nl">badk.</span></span>
+            <span>165 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+      <a class="property-card c5" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;3,800,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">Sierra Blanca</div>
+          <h3>
+            <span data-i18n="en">Gated villa with private pool and views</span>
+            <span data-i18n="nl">Villa in beveiligd complex met priv&eacute;zwembad en uitzicht</span>
+          </h3>
+          <div class="property-meta">
+            <span>5 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>5 <span data-i18n="en">baths</span><span data-i18n="nl">badk.</span></span>
+            <span>540 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+      <a class="property-card c6" href="#" target="_blank" rel="noopener">
+        <div class="property-photo">
+          <div class="property-price">&euro;320,000</div>
+        </div>
+        <div class="property-info">
+          <div class="location">M&aacute;laga city</div>
+          <h3>
+            <span data-i18n="en">City-centre apartment, rental potential</span>
+            <span data-i18n="nl">Appartement centrum, geschikt voor verhuur</span>
+          </h3>
+          <div class="property-meta">
+            <span>2 <span data-i18n="en">beds</span><span data-i18n="nl">slaapk.</span></span>
+            <span>1 <span data-i18n="en">bath</span><span data-i18n="nl">badk.</span></span>
+            <span>72 m&sup2;</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="network-section">
+  <div class="section-inner network-grid">
+    <div class="network-text">
+      <div class="kicker">
+        <span data-i18n="en">For Dutch buyers</span>
+        <span data-i18n="nl">Voor Nederlandse kopers</span>
+      </div>
+      <h2>
+        <span data-i18n="en">A network built on trust, not volume</span>
+        <span data-i18n="nl">Een netwerk gebouwd op vertrouwen, niet op volume</span>
+      </h2>
+      <p>
+        <span data-i18n="en">I work with a small number of established agencies across Marbella &mdash; each with their own focus, so your search lands with someone who genuinely knows the area and price range you're after.</span>
+        <span data-i18n="nl">Ik werk samen met een select aantal gevestigde kantoren in Marbella &mdash; elk met hun eigen focus, zodat uw zoekopdracht terechtkomt bij iemand die het gebied en prijssegment echt kent.</span>
+      </p>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="num">0</div>
+          <div class="label">
+            <span data-i18n="en">Extra cost to you</span>
+            <span data-i18n="nl">Extra kosten voor u</span>
+          </div>
+        </div>
+        <div class="stat">
+          <div class="num">24h</div>
+          <div class="label">
+            <span data-i18n="en">Typical response time</span>
+            <span data-i18n="nl">Gebruikelijke reactietijd</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="network-visual">
+      <div class="you-row">
+        <div class="you-circle">AG</div>
+        <div class="you-label">
+          <span data-i18n="en">Your first contact</span>
+          <span data-i18n="nl">Uw eerste contact</span>
+          <strong>A. Gonzalez</strong>
+        </div>
+      </div>
+      <a class="partner-row" href="https://www.marbella-resales.com" target="_blank" rel="noopener">
+        <span class="name">Marbella-Resales</span>
+        <span class="spec">Puerto Ban&uacute;s &amp; resale</span>
+      </a>
+      <a class="partner-row" href="https://www.marbellaforsale.com" target="_blank" rel="noopener">
+        <span class="name">Marbella For Sale</span>
+        <span class="spec">Golden Mile &amp; villas</span>
+      </a>
+      <a class="partner-row" href="https://www.orangestate.net" target="_blank" rel="noopener">
+        <span class="name">Orangestate Properties</span>
+        <span class="spec">Marbella &amp; Fuengirola</span>
+      </a>
+      <a class="partner-row" href="https://www.resales-online.com" target="_blank" rel="noopener">
+        <span class="name">Resales Online network</span>
+        <span class="spec">1,000+ agents, Costa del Sol</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="contact">
+  <div class="form-grid">
+    <div>
+      <div class="kicker">
+        <span data-i18n="en">Get started</span>
+        <span data-i18n="nl">Aan de slag</span>
+      </div>
+      <h2>
+        <span data-i18n="en">Tell me what you're looking for</span>
+        <span data-i18n="nl">Vertel me wat u zoekt</span>
+      </h2>
+      <p>
+        <span data-i18n="en">I'll reply personally within 24 hours and introduce you to the right local agency &mdash; based on your area, budget and timeline.</span>
+        <span data-i18n="nl">Ik reageer persoonlijk binnen 24 uur en introduceer u bij het juiste lokale kantoor &mdash; op basis van uw gebied, budget en planning.</span>
+      </p>
+    </div>
+
+    <div class="form-card">
+    <form id="lead-form" action="https://formspree.io/f/mwvjrnyv" method="POST">
+      <div data-fs-success class="form-success">
+        <span data-i18n="en">Thanks &mdash; I'll be in touch within 24 hours.</span>
+        <span data-i18n="nl">Dank u &mdash; ik neem binnen 24 uur contact op.</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="name">
+            <span data-i18n="en">Full name</span>
+            <span data-i18n="nl">Volledige naam</span>
+          </label>
+          <input type="text" id="name" name="name" data-fs-field required>
+          <span data-fs-error="name" class="field-error"></span>
+        </div>
+        <div class="field">
+          <label for="email">
+            <span data-i18n="en">Email</span>
+            <span data-i18n="nl">E-mail</span>
+          </label>
+          <input type="email" id="email" name="email" data-fs-field required>
+          <span data-fs-error="email" class="field-error"></span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="phone">
+          <span data-i18n="en">Phone / WhatsApp</span>
+          <span data-i18n="nl">Telefoon / WhatsApp</span>
+        </label>
+        <input type="tel" id="phone" name="phone" data-fs-field>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="area">
+            <span data-i18n="en">Preferred area</span>
+            <span data-i18n="nl">Voorkeursgebied</span>
+          </label>
+          <select id="area" name="area" data-fs-field>
+            <option value=""></option>
+            <option>Marbella / Golden Mile</option>
+            <option>Nueva Andaluc&iacute;a</option>
+            <option>Puerto Ban&uacute;s</option>
+            <option>Estepona</option>
+            <option>Benah&aacute;vis</option>
+            <option>M&aacute;laga</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget">
+            <span data-i18n="en">Budget range</span>
+            <span data-i18n="nl">Budget</span>
+          </label>
+          <select id="budget" name="budget" data-fs-field>
+            <option value=""></option>
+            <option>&lt; &euro;300,000</option>
+            <option>&euro;300,000 &ndash; &euro;500,000</option>
+            <option>&euro;500,000 &ndash; &euro;1,000,000</option>
+            <option>&euro;1,000,000 &ndash; &euro;2,000,000</option>
+            <option>&euro;2,000,000+</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="message">
+          <span data-i18n="en">Anything else I should know?</span>
+          <span data-i18n="nl">Nog iets dat ik moet weten?</span>
+        </label>
+        <textarea id="message" name="message" rows="2" data-fs-field></textarea>
+      </div>
+
+      <div data-fs-error class="form-error"></div>
+
+      <button type="submit" class="btn btn-primary" data-fs-submit-btn>
+        <span data-i18n="en">Send &mdash; I'll personally follow up</span>
+        <span data-i18n="nl">Versturen &mdash; ik reageer persoonlijk</span>
+      </button>
+
+      <p class="form-note">
+        <span data-i18n="en">Your details are shared only with the agency I introduce you to, with your knowledge.</span>
+        <span data-i18n="nl">Uw gegevens worden alleen gedeeld met het makelaarskantoor waarbij ik u introduceer, met uw medeweten.</span>
+      </p>
+    </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>&copy; 2026 Marbella Match &middot; A. Gonzalez</div>
+    <div>
+      <a href="mailto:info@agg.homes">info@agg.homes</a> &middot; <a href="tel:+31617622375">+31 6 17 62 23 75</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lang = btn.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', lang);
+      document.querySelectorAll('.lang-toggle button').forEach(function(b){
+        b.classList.toggle('active', b === btn);
+      });
+    });
+  });
+
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#lead-form', formId: 'mwvjrnyv' });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+</body>
+</html>
