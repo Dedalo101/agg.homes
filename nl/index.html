@@ -94,39 +94,39 @@
   ]
 }</script>
 
-<link rel="preload" as="image" href="/images/hero-800.webp" imagesrcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" imagesizes="100vw" type="image/webp" fetchpriority="high">
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/images/hero-800.webp" imagesrcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" imagesizes="100vw" type="image/webp" fetchpriority="high">
 
 <style>
   @font-face{
     font-family:'Inter';
     font-style:normal;
     font-weight:400 600;
-    font-display:swap;
+    font-display:optional;
     src:url('/fonts/inter-latin.woff2') format('woff2');
   }
   @font-face{
     font-family:'Inter Fallback';
     src:local('Arial');
-    size-adjust:107%;
-    ascent-override:90%;
-    descent-override:22%;
+    size-adjust:101.6%;
+    ascent-override:96.9%;
+    descent-override:24.1%;
     line-gap-override:0%;
   }
   @font-face{
     font-family:'Cormorant Garamond';
     font-style:normal;
     font-weight:500 600;
-    font-display:swap;
+    font-display:optional;
     src:url('/fonts/cormorant-600.woff2') format('woff2');
   }
   @font-face{
     font-family:'Cormorant Fallback';
     src:local('Georgia');
-    size-adjust:112%;
-    ascent-override:88%;
-    descent-override:22%;
+    size-adjust:90.1%;
+    ascent-override:92.4%;
+    descent-override:28.7%;
     line-gap-override:0%;
   }
   :root{
@@ -211,6 +211,8 @@
     letter-spacing:0.01em;
     max-width:18ch;
     margin-bottom:28px;
+    font-synthesis:none;
+    text-rendering:optimizeLegibility;
   }
   .hero h1 em{font-style:italic;font-weight:400;}
   .hero p{
@@ -536,8 +538,8 @@
 <section class="agent-band">
   <div class="agent-band-inner">
     <picture>
-      <source srcset="/images/photo-280.webp" type="image/webp">
-      <img class="agent-photo" src="/images/photo-280.jpg" alt="A. Gonzalez, onafhankelijk woonadviseur in Marbella, Costa del Sol" width="280" height="280" loading="lazy" decoding="async">
+      <source srcset="/images/photo.webp" type="image/webp">
+      <img class="agent-photo" src="/images/photo.jpg" alt="A. Gonzalez, onafhankelijk woonadviseur in Marbella, Costa del Sol" width="280" height="280" loading="lazy" decoding="async">
     </picture>
     <div class="agent-text">
       <div class="kicker">
@@ -631,7 +633,7 @@
     <div class="properties-grid">
       <a class="property-card c1" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c1.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c1.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;1,250,000</div>
         </div>
         <div class="property-info">
@@ -649,7 +651,7 @@
       </a>
       <a class="property-card c2" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c2.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c2.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;485,000</div>
         </div>
         <div class="property-info">
@@ -667,7 +669,7 @@
       </a>
       <a class="property-card c3" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c3.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c3.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;2,950,000</div>
         </div>
         <div class="property-info">
@@ -685,7 +687,7 @@
       </a>
       <a class="property-card c4" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c4.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c4.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;695,000</div>
         </div>
         <div class="property-info">
@@ -703,7 +705,7 @@
       </a>
       <a class="property-card c5" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c5.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c5.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;3,800,000</div>
         </div>
         <div class="property-info">
@@ -721,7 +723,7 @@
       </a>
       <a class="property-card c6" href="#contact">
         <div class="property-photo">
-          <img src="/images/properties/c6.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
+          <img src="/images/properties/c6.webp" alt="" width="440" height="330" loading="lazy" decoding="async">
           <div class="property-price">&euro;320,000</div>
         </div>
         <div class="property-info">

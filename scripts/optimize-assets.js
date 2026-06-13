@@ -9,9 +9,15 @@ const ROOT = path.join(__dirname, '..');
 const IMG = path.join(ROOT, 'images');
 const PROP = path.join(IMG, 'properties');
 
-function sharp(inPath, outPath, format, width) {
+const PROP_W = 880;
+const PROP_H = 660;
+const PHOTO_W = 560;
+const PHOTO_H = 560;
+
+function sharpResize(inPath, outPath, format, width, height) {
+  const size = height ? `resize ${width} ${height}` : `resize ${width}`;
   execSync(
-    `npx --yes sharp-cli -i "${inPath}" -o "${outPath}" -f ${format} resize ${width}`,
+    `npx --yes sharp-cli -i "${inPath}" -o "${outPath}" -f ${format} ${size}`,
     { stdio: 'inherit' }
   );
 }
@@ -22,12 +28,12 @@ const HERO = {
 };
 
 const PROPERTIES = [
-  ['c1', 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=640&q=75'],
-  ['c2', 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=640&q=75'],
-  ['c3', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=640&q=75'],
-  ['c4', 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=640&q=75'],
-  ['c5', 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=640&q=75'],
-  ['c6', 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=640&q=75'],
+  ['c1', 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1760&q=75'],
+  ['c2', 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1760&q=75'],
+  ['c3', 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1760&q=75'],
+  ['c4', 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1760&q=75'],
+  ['c5', 'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1760&q=75'],
+  ['c6', 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1760&q=75'],
 ];
 
 const FONTS = [
@@ -53,26 +59,25 @@ async function run() {
 
   console.log('Hero images…');
   fs.writeFileSync(HERO.tmp, await download(HERO.url));
-  sharp(HERO.tmp, path.join(IMG, 'hero-800.webp'), 'webp', 800);
-  sharp(HERO.tmp, path.join(IMG, 'hero-1280.webp'), 'webp', 1280);
+  sharpResize(HERO.tmp, path.join(IMG, 'hero-800.webp'), 'webp', 800);
+  sharpResize(HERO.tmp, path.join(IMG, 'hero-1280.webp'), 'webp', 1280);
   fs.copyFileSync(path.join(IMG, 'hero-1280.webp'), path.join(IMG, 'hero.webp'));
   fs.unlinkSync(HERO.tmp);
 
   for (const [id, url] of PROPERTIES) {
     const tmp = path.join(PROP, `_tmp_${id}`);
     const dest = path.join(PROP, `${id}.webp`);
-    console.log(`Property ${id}…`);
+    console.log(`Property ${id} (${PROP_W}x${PROP_H})…`);
     fs.writeFileSync(tmp, await download(url));
-    sharp(tmp, dest, 'webp', 400);
+    sharpResize(tmp, dest, 'webp', PROP_W, PROP_H);
     fs.unlinkSync(tmp);
   }
 
   const photoSrc = path.join(ROOT, 'photo.png');
   if (fs.existsSync(photoSrc)) {
-    console.log('Agent photo…');
-    sharp(photoSrc, path.join(IMG, 'photo-280.webp'), 'webp', 280);
-    sharp(photoSrc, path.join(IMG, 'photo-280.jpg'), 'jpeg', 280);
-    fs.copyFileSync(path.join(IMG, 'photo-280.webp'), path.join(IMG, 'photo.webp'));
+    console.log(`Agent photo (${PHOTO_W}x${PHOTO_H})…`);
+    sharpResize(photoSrc, path.join(IMG, 'photo.webp'), 'webp', PHOTO_W, PHOTO_H);
+    sharpResize(photoSrc, path.join(IMG, 'photo.jpg'), 'jpeg', PHOTO_W, PHOTO_H);
   }
 
   for (const font of FONTS) {
