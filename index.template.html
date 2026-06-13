@@ -6,7 +6,7 @@
 <title>Marbella Match — Find your home on the Costa del Sol</title>
 <meta name="description" content="Personal introductions to trusted local agents in Marbella, Nueva Andalucía, Estepona and Benahávis. One conversation, the right specialist for your search.">
 
-<link rel="preload" href="/images/hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" as="image" href="/images/hero-800.webp" imagesrcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" imagesizes="100vw" type="image/webp" fetchpriority="high">
 <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
 
@@ -19,22 +19,38 @@
     src:url('/fonts/inter-latin.woff2') format('woff2');
   }
   @font-face{
+    font-family:'Inter Fallback';
+    src:local('Arial');
+    size-adjust:107%;
+    ascent-override:90%;
+    descent-override:22%;
+    line-gap-override:0%;
+  }
+  @font-face{
     font-family:'Cormorant Garamond';
     font-style:normal;
     font-weight:500 600;
     font-display:swap;
     src:url('/fonts/cormorant-600.woff2') format('woff2');
   }
+  @font-face{
+    font-family:'Cormorant Fallback';
+    src:local('Georgia');
+    size-adjust:112%;
+    ascent-override:88%;
+    descent-override:22%;
+    line-gap-override:0%;
+  }
   :root{
     --ink:#1C1C1A;
-    --ink-soft:#5A5854;
+    --ink-soft:#484640;
     --paper:#FFFFFF;
     --cream:#F7F5F1;
     --line:#E6E2DA;
     --gold:#A8895C;
-    --gold-text:#6E5635;
-    --serif:'Cormorant Garamond', Georgia, serif;
-    --sans:'Inter', system-ui, sans-serif;
+    --gold-text:#5C4528;
+    --serif:'Cormorant Garamond', 'Cormorant Fallback', Georgia, serif;
+    --sans:'Inter', 'Inter Fallback', system-ui, sans-serif;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -285,7 +301,7 @@
   .network-text p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;max-width:48ch;}
 
   .stat-row{display:flex;gap:48px;margin-top:32px;}
-  .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold);line-height:1;margin-bottom:6px;}
+  .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold-text);line-height:1;margin-bottom:6px;}
   .stat .label{font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;}
 
   .form-section{
@@ -322,7 +338,7 @@
     border-radius:2px;
   }
   .field select{cursor:pointer;}
-  .field input::placeholder, .field textarea::placeholder{color:#B8B3A8;}
+  .field input::placeholder, .field textarea::placeholder{color:#6B665C;}
   .field input:focus, .field select:focus, .field textarea:focus{
     outline:none;border-color:var(--gold);
   }
@@ -346,13 +362,13 @@
   .field-error{display:block;color:#B5453F;font-size:12px;margin-top:6px;}
   [aria-invalid="true"]{border-color:#B5453F !important;}
 
-  footer{padding:40px 48px;background:var(--ink);color:rgba(255,255,255,0.5);border-top:1px solid rgba(255,255,255,0.1);}
+  footer{padding:40px 48px;background:var(--ink);color:rgba(255,255,255,0.78);border-top:1px solid rgba(255,255,255,0.1);}
   .footer-inner{
     max-width:1280px;margin:0 auto;
     display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
     font-size:13px;
   }
-  .footer-inner a{color:var(--gold);font-weight:500;}
+  .footer-inner a{color:#D4B88A;font-weight:500;}
 
   @media (max-width:980px){
     header{padding:24px;}
@@ -400,7 +416,7 @@
 
 <main>
 <section class="hero">
-  <img class="hero-bg" src="/images/hero.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
+  <img class="hero-bg" src="/images/hero-1280.webp" srcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" sizes="100vw" alt="" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span data-i18n="en">Costa del Sol &mdash; since 2011</span>
@@ -434,8 +450,8 @@
 <section class="agent-band">
   <div class="agent-band-inner">
     <picture>
-      <source srcset="/images/photo.webp" type="image/webp">
-      <img class="agent-photo" src="/photo.png" alt="A. Gonzalez, independent property consultant in Marbella" width="280" height="280" loading="lazy" decoding="async">
+      <source srcset="/images/photo-280.webp" type="image/webp">
+      <img class="agent-photo" src="/images/photo-280.jpg" alt="A. Gonzalez, independent property consultant in Marbella" width="280" height="280" loading="lazy" decoding="async">
     </picture>
     <div class="agent-text">
       <div class="kicker">
