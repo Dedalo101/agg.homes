@@ -59,7 +59,14 @@ async function listRecords() {
 
 function isApexOrWww(rec) {
   const name = String(rec.name || '').toLowerCase();
-  return name === '' || name === '@' || name === 'www' || name === DOMAIN.toLowerCase();
+  const domain = DOMAIN.toLowerCase();
+  return (
+    name === '' ||
+    name === '@' ||
+    name === 'www' ||
+    name === domain ||
+    name === `www.${domain}`
+  );
 }
 
 function isGithubPagesRecord(rec) {
