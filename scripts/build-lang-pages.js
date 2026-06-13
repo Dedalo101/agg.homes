@@ -96,7 +96,7 @@ function schemaJson(meta) {
           '@id': `${meta.canonical}#agent`,
           name: 'A. Gonzalez',
           url: meta.canonical,
-          image: `${BASE}/photo.png`,
+          image: `${BASE}/images/photo.webp`,
           telephone: '+31-6-17622375',
           email: 'info@agg.homes',
           description: meta.schemaDesc,
@@ -115,7 +115,7 @@ function schemaJson(meta) {
           '@id': `${meta.canonical}#org`,
           name: 'AGG.homes',
           url: BASE,
-          logo: `${BASE}/photo.png`,
+          logo: `${BASE}/images/photo.webp`,
           description: meta.schemaDesc,
           address: {
             '@type': 'PostalAddress',
@@ -167,7 +167,7 @@ function buildPage(lang) {
 <meta property="og:url" content="${meta.canonical}">
 <meta property="og:title" content="${meta.title}">
 <meta property="og:description" content="${meta.description}">
-<meta property="og:image" content="${BASE}/photo.png">
+<meta property="og:image" content="${BASE}/images/photo.webp">
 <script type="application/ld+json">${schemaJson(meta)}</script>`;
 
   html = html.replace(/<meta name="description"[^>]*>/i, (m) => m + seoBlock);
@@ -202,9 +202,8 @@ function buildPage(lang) {
   .lang-toggle a.active,.lang-toggle a:hover{background:#FFF;color:var(--ink);border-color:#FFF;}`
   );
 
-  html = html.replace('src="photo.png"', 'src="/photo.png"');
   html = html.replace(
-    'alt="A. Gonzalez"',
+    'alt="A. Gonzalez, independent property consultant in Marbella"',
     `alt="${meta.photoAlt}"`
   );
 
@@ -227,13 +226,7 @@ function buildPage(lang) {
 
   html = html.replace(
     /<script>[\s\S]*?data-set-lang[\s\S]*?<\/script>\s*/,
-    '<script>\n'
-  );
-
-  html = html.replace(
-    /<script>\s*window\.formspree/,
-    `<script>
-  window.formspree`
+    ''
   );
 
   return html;

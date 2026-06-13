@@ -6,11 +6,25 @@
 <title>Marbella Match — Find your home on the Costa del Sol</title>
 <meta name="description" content="Personal introductions to trusted local agents in Marbella, Nueva Andalucía, Estepona and Benahávis. One conversation, the right specialist for your search.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="/images/hero.webp" as="image" type="image/webp" fetchpriority="high">
+<link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
 
 <style>
+  @font-face{
+    font-family:'Inter';
+    font-style:normal;
+    font-weight:400 600;
+    font-display:swap;
+    src:url('/fonts/inter-latin.woff2') format('woff2');
+  }
+  @font-face{
+    font-family:'Cormorant Garamond';
+    font-style:normal;
+    font-weight:500 600;
+    font-display:swap;
+    src:url('/fonts/cormorant-600.woff2') format('woff2');
+  }
   :root{
     --ink:#1C1C1A;
     --ink-soft:#5A5854;
@@ -18,8 +32,9 @@
     --cream:#F7F5F1;
     --line:#E6E2DA;
     --gold:#A8895C;
-    --serif:'Cormorant Garamond', serif;
-    --sans:'Inter', sans-serif;
+    --gold-text:#6E5635;
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -65,10 +80,12 @@
     position:relative;
     height:100vh;min-height:640px;
     display:flex;align-items:center;
-    background:
-      linear-gradient(180deg, rgba(20,20,18,0.15) 0%, rgba(20,20,18,0.55) 100%),
-      url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
     overflow:hidden;
+    background:linear-gradient(180deg, rgba(20,20,18,0.15) 0%, rgba(20,20,18,0.55) 100%);
+  }
+  .hero-bg{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;z-index:0;
   }
   .hero::after{
     content:'';position:absolute;inset:0;
@@ -137,7 +154,7 @@
   }
   .agent-text .kicker{
     font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
+    color:var(--gold-text);margin-bottom:16px;
   }
   .agent-text h2{
     font-family:var(--serif);font-size:clamp(28px,4vw,40px);font-weight:500;
@@ -161,7 +178,7 @@
   }
   .section-header .kicker{
     font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
+    color:var(--gold-text);margin-bottom:16px;
   }
   .section-header h2{
     font-family:var(--serif);font-size:clamp(32px,5vw,52px);font-weight:500;
@@ -179,7 +196,7 @@
   .how-grid .how-step:last-child{border-right:none;}
   .how-step .roman{
     font-family:var(--serif);font-size:15px;font-weight:500;letter-spacing:0.3em;
-    color:var(--gold);margin-bottom:24px;
+    color:var(--gold-text);margin-bottom:24px;
   }
   .how-step h3{
     font-family:var(--serif);font-size:24px;font-weight:500;margin-bottom:14px;
@@ -199,7 +216,10 @@
   .property-card:hover{border-color:var(--gold);}
   .property-photo{
     aspect-ratio:4/3;position:relative;overflow:hidden;
-    background-size:cover;background-position:center;
+    background:#D8D2C4;
+  }
+  .property-photo img{
+    width:100%;height:100%;object-fit:cover;display:block;
   }
   .property-photo::before{
     content:'';position:absolute;inset:0;
@@ -211,16 +231,11 @@
     font-family:var(--serif);font-size:20px;font-weight:600;
     padding:6px 16px;
   }
-  .property-card.c1 .property-photo{background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop');}
-  .property-card.c2 .property-photo{background-image:url('https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?q=80&w=800&auto=format&fit=crop');}
-  .property-card.c3 .property-photo{background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop');}
-  .property-card.c4 .property-photo{background-image:url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop');}
-  .property-card.c5 .property-photo{background-image:url('https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=800&auto=format&fit=crop');}
-  .property-card.c6 .property-photo{background-image:url('https://images.unsplash.com/photo-1493809842364-78817add7ffb?q=80&w=800&auto=format&fit=crop');}
+
   .property-info{padding:24px;flex:1;display:flex;flex-direction:column;}
   .property-info .location{
     font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:8px;
+    color:var(--gold-text);margin-bottom:8px;
   }
   .property-info h3{
     font-family:var(--serif);font-size:21px;font-weight:500;line-height:1.3;
@@ -261,7 +276,7 @@
 
   .network-text .kicker{
     font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
+    color:var(--gold-text);margin-bottom:16px;
   }
   .network-text h2{
     font-family:var(--serif);font-size:clamp(32px,4.5vw,48px);font-weight:500;
@@ -283,7 +298,7 @@
   }
   .form-grid .kicker{
     font-size:13px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:16px;
+    color:var(--gold-text);margin-bottom:16px;
   }
   .form-grid h2{
     font-family:var(--serif);font-size:clamp(32px,4.5vw,52px);font-weight:500;
@@ -369,6 +384,8 @@
   }
 
   a:focus-visible, button:focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  .agent-band,.section,.network-section,.form-section{content-visibility:auto;contain-intrinsic-size:auto 800px;}
 </style>
 </head>
 <body>
@@ -381,7 +398,9 @@
   </div>
 </header>
 
+<main>
 <section class="hero">
+  <img class="hero-bg" src="/images/hero.webp" alt="" width="1280" height="720" fetchpriority="high" decoding="async">
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span data-i18n="en">Costa del Sol &mdash; since 2011</span>
@@ -414,7 +433,10 @@
 
 <section class="agent-band">
   <div class="agent-band-inner">
-    <img class="agent-photo" src="photo.png" alt="A. Gonzalez">
+    <picture>
+      <source srcset="/images/photo.webp" type="image/webp">
+      <img class="agent-photo" src="/photo.png" alt="A. Gonzalez, independent property consultant in Marbella" width="280" height="280" loading="lazy" decoding="async">
+    </picture>
     <div class="agent-text">
       <div class="kicker">
         <span data-i18n="en">Your local contact</span>
@@ -505,8 +527,9 @@
          photo -> listing main image, location -> area, h3 -> title,
          price -> listing price, meta -> beds/baths/m2, href -> listing detail link -->
     <div class="properties-grid">
-      <a class="property-card c1" href="#" target="_blank" rel="noopener">
+      <a class="property-card c1" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c1.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;1,250,000</div>
         </div>
         <div class="property-info">
@@ -522,8 +545,9 @@
           </div>
         </div>
       </a>
-      <a class="property-card c2" href="#" target="_blank" rel="noopener">
+      <a class="property-card c2" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c2.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;485,000</div>
         </div>
         <div class="property-info">
@@ -539,8 +563,9 @@
           </div>
         </div>
       </a>
-      <a class="property-card c3" href="#" target="_blank" rel="noopener">
+      <a class="property-card c3" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c3.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;2,950,000</div>
         </div>
         <div class="property-info">
@@ -556,8 +581,9 @@
           </div>
         </div>
       </a>
-      <a class="property-card c4" href="#" target="_blank" rel="noopener">
+      <a class="property-card c4" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c4.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;695,000</div>
         </div>
         <div class="property-info">
@@ -573,8 +599,9 @@
           </div>
         </div>
       </a>
-      <a class="property-card c5" href="#" target="_blank" rel="noopener">
+      <a class="property-card c5" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c5.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;3,800,000</div>
         </div>
         <div class="property-info">
@@ -590,8 +617,9 @@
           </div>
         </div>
       </a>
-      <a class="property-card c6" href="#" target="_blank" rel="noopener">
+      <a class="property-card c6" href="#contact">
         <div class="property-photo">
+          <img src="/images/properties/c6.webp" alt="" width="400" height="300" loading="lazy" decoding="async">
           <div class="property-price">&euro;320,000</div>
         </div>
         <div class="property-info">
@@ -778,6 +806,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <footer>
   <div class="footer-inner">
@@ -789,20 +818,22 @@
 </footer>
 
 <script>
-  document.querySelectorAll('[data-set-lang]').forEach(function(btn){
-    btn.addEventListener('click', function(){
-      var lang = btn.getAttribute('data-set-lang');
-      document.documentElement.setAttribute('data-lang', lang);
-      document.querySelectorAll('.lang-toggle button').forEach(function(b){
-        b.classList.toggle('active', b === btn);
-      });
-    });
-  });
-
-  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-  formspree('initForm', { formElement: '#lead-form', formId: 'mwvjrnyv' });
+(function(){
+  var form = document.getElementById('lead-form');
+  if (!form) return;
+  function loadFormspree(){
+    var s = document.createElement('script');
+    s.src = 'https://unpkg.com/@formspree/ajax@1';
+    s.async = true;
+    s.onload = function(){
+      window.formspree = window.formspree || function(){ (formspree.q = formspree.q || []).push(arguments); };
+      formspree('initForm', { formElement: '#lead-form', formId: 'mwvjrnyv' });
+    };
+    document.head.appendChild(s);
+  }
+  form.addEventListener('focusin', loadFormspree, { once: true });
+})();
 </script>
-<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
