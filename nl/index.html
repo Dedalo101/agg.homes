@@ -88,6 +88,14 @@
             "@type": "Answer",
             "text": "Nee — introducties via agg.homes zijn gratis voor kopers."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Waarom een tussenpersoon in plaats van rechtstreeks naar een makelaar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elk partnerkantoor specialiseert zich in andere gebieden en prijssegmenten. A. Gonzalez koppelt u aan degene die bij uw profiel past — zodat u niet wordt doorverwezen tussen makelaars die uw zoektocht niet kennen."
+          }
         }
       ]
     }
@@ -388,9 +396,29 @@
   }
   .network-text p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;max-width:48ch;}
 
-  .stat-row{display:flex;gap:48px;margin-top:32px;}
+  .stat-row{display:flex;gap:48px;margin-top:32px;flex-wrap:wrap;}
   .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold-text);line-height:1;margin-bottom:6px;}
   .stat .label{font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;}
+
+  .testimonials-section{background:var(--paper);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .testimonial-card{
+    border:1px solid var(--line);padding:32px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .testimonial-card blockquote{
+    font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.4;
+    color:var(--ink);font-style:italic;
+  }
+  .testimonial-card cite{
+    font-size:13px;color:var(--ink-soft);font-style:normal;letter-spacing:0.04em;
+  }
+  .how-note{
+    margin-top:48px;padding-top:32px;border-top:1px solid var(--line);
+    text-align:center;max-width:56ch;margin-left:auto;margin-right:auto;
+  }
+  .how-note p{font-size:15px;color:var(--ink-soft);}
+  .required{color:var(--gold-text);margin-left:2px;}
 
   .form-section{
     background:var(--cream);color:var(--ink);
@@ -472,6 +500,7 @@
     .network-section{padding:64px 24px;}
     .network-grid{grid-template-columns:1fr;gap:48px;}
     .stat-row{gap:32px;}
+    .testimonials-grid{grid-template-columns:1fr;}
     .form-section{padding:64px 24px;}
     .form-grid{grid-template-columns:1fr;gap:48px;}
     .field-row{grid-template-columns:1fr;}
@@ -609,6 +638,42 @@
           Geen extra kosten voor u &mdash; het juiste kantoor neemt snel contact op, met alle context over wat u zoekt.
         </p>
       </div>
+    </div>
+    <div class="how-note">
+      <p>
+        <strong>Waarom niet rechtstreeks een makelaar bellen?</strong>
+        
+         De meeste kantoren dekken brede gebieden maar specialiseren zich in andere prijssegmenten en wijken. Ik introduceer u bij degene die echt bij uw zoektocht past — niet wie het eerst opneemt.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials-section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        
+        Wat kopers zeggen
+      </div>
+      <h2>
+        
+        Betrouwbare introducties sinds 2011
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;A. Gonzalez koppelde ons binnen een dag aan het juiste kantoor. Onze villa in Benah&aacute;vis vonden we in zes weken.&rdquo;</blockquote>
+        <cite>Mark &amp; Sophie &middot; Amsterdam</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;Eindelijk iemand die Nederlands spreekt en eerst luistert voordat er woningen worden gestuurd. Geen druk, geen extra kosten.&rdquo;</blockquote>
+        <cite>Pieter &middot; Utrecht</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;We werden ge&iuml;ntroduceerd bij een specialist die Nueva Andaluc&iacute;a echt kende. Maanden aan irrelevante bezichtigingen bespaard.&rdquo;</blockquote>
+        <cite>Linda &middot; Rotterdam</cite>
+      </figure>
     </div>
   </div>
 </section>
@@ -760,6 +825,13 @@
       </p>
       <div class="stat-row">
         <div class="stat">
+          <div class="num">40+</div>
+          <div class="label">
+            
+            Kopers ge&iuml;ntroduceerd sinds 2011
+          </div>
+        </div>
+        <div class="stat">
           <div class="num">0</div>
           <div class="label">
             
@@ -833,6 +905,7 @@
           <label for="name">
             
             Volledige naam
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="text" id="name" name="name" data-fs-field required>
           <span data-fs-error="name" class="field-error"></span>
@@ -841,6 +914,7 @@
           <label for="email">
             
             E-mail
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="email" id="email" name="email" data-fs-field required>
           <span data-fs-error="email" class="field-error"></span>
@@ -904,7 +978,7 @@
 
       <p class="form-note">
         
-        Uw gegevens worden alleen gedeeld met het makelaarskantoor waarbij ik u introduceer, met uw medeweten.
+        Uw gegevens worden alleen gedeeld met het makelaarskantoor waarbij ik u introduceer, met uw medeweten. Verwerkt conform ons <a href="/nl/privacy">privacybeleid</a>.
       </p>
     </form>
     </div>
@@ -914,7 +988,7 @@
 
 <footer>
   <div class="footer-inner">
-    <div>© 2026 AGG.homes · A. Gonzalez &middot; <a href="/nl/gidsen/marbella">Marbella-koopgids</a></div>
+    <div>© 2026 AGG.homes · A. Gonzalez &middot; <a href="/nl/gidsen/marbella">Marbella-koopgids</a> &middot; <a href="/nl/privacy">Privacy</a></div>
     <div>
       <a href="mailto:info@agg.homes">info@agg.homes</a> &middot; <a href="tel:+31617622375">+31 6 17 62 23 75</a>
     </div>

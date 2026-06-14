@@ -33,6 +33,10 @@ const META = {
         q: 'Is there an extra cost for the introduction?',
         a: 'No — introductions through agg.homes are free for buyers.',
       },
+      {
+        q: 'Why use an intermediary instead of going directly to an agency?',
+        a: 'Each partner agency specialises in different areas and price ranges. A. Gonzalez matches you to the one that fits your profile — so you are not passed between agents who do not know your search.',
+      },
     ],
   },
   nl: {
@@ -57,6 +61,10 @@ const META = {
       {
         q: 'Zijn er extra kosten voor de introductie?',
         a: 'Nee — introducties via agg.homes zijn gratis voor kopers.',
+      },
+      {
+        q: 'Waarom een tussenpersoon in plaats van rechtstreeks naar een makelaar?',
+        a: 'Elk partnerkantoor specialiseert zich in andere gebieden en prijssegmenten. A. Gonzalez koppelt u aan degene die bij uw profiel past — zodat u niet wordt doorverwezen tussen makelaars die uw zoektocht niet kennen.',
       },
     ],
   },
@@ -219,9 +227,11 @@ function buildPage(lang) {
 
   const guideHref = lang === 'en' ? '/en/guides/marbella' : '/nl/gidsen/marbella';
   const guideLabel = lang === 'en' ? 'Marbella buying guide' : 'Marbella-koopgids';
+  const privacyHref = lang === 'en' ? '/en/privacy' : '/nl/privacy';
+  const privacyLabel = lang === 'en' ? 'Privacy' : 'Privacy';
   html = html.replace(
     /&copy; 2026 Marbella Match &middot; A\. Gonzalez/,
-    `${meta.footer} &middot; <a href="${guideHref}">${guideLabel}</a>`
+    `${meta.footer} &middot; <a href="${guideHref}">${guideLabel}</a> &middot; <a href="${privacyHref}">${privacyLabel}</a>`
   );
 
   html = html.replace(
@@ -258,23 +268,84 @@ function writeRobots() {
 }
 
 function writeSitemap() {
-  const urls = [
-    { loc: `${BASE}/en/`, lang: 'en' },
-    { loc: `${BASE}/nl/`, lang: 'nl' },
-    { loc: `${BASE}/en/guides/marbella`, lang: 'en' },
-    { loc: `${BASE}/nl/gidsen/marbella`, lang: 'nl' },
+  const pages = [
+    {
+      loc: `${BASE}/en/`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/` },
+        { hreflang: 'nl', href: `${BASE}/nl/` },
+        { hreflang: 'x-default', href: `${BASE}/en/` },
+      ],
+      priority: '1.0',
+      changefreq: 'monthly',
+    },
+    {
+      loc: `${BASE}/nl/`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/` },
+        { hreflang: 'nl', href: `${BASE}/nl/` },
+        { hreflang: 'x-default', href: `${BASE}/en/` },
+      ],
+      priority: '1.0',
+      changefreq: 'monthly',
+    },
+    {
+      loc: `${BASE}/en/guides/marbella`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/guides/marbella` },
+        { hreflang: 'nl', href: `${BASE}/nl/gidsen/marbella` },
+        { hreflang: 'x-default', href: `${BASE}/en/guides/marbella` },
+      ],
+      priority: '0.7',
+      changefreq: 'monthly',
+    },
+    {
+      loc: `${BASE}/nl/gidsen/marbella`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/guides/marbella` },
+        { hreflang: 'nl', href: `${BASE}/nl/gidsen/marbella` },
+        { hreflang: 'x-default', href: `${BASE}/en/guides/marbella` },
+      ],
+      priority: '0.7',
+      changefreq: 'monthly',
+    },
+    {
+      loc: `${BASE}/en/privacy`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/privacy` },
+        { hreflang: 'nl', href: `${BASE}/nl/privacy` },
+        { hreflang: 'x-default', href: `${BASE}/en/privacy` },
+      ],
+      priority: '0.3',
+      changefreq: 'yearly',
+    },
+    {
+      loc: `${BASE}/nl/privacy`,
+      alternates: [
+        { hreflang: 'en', href: `${BASE}/en/privacy` },
+        { hreflang: 'nl', href: `${BASE}/nl/privacy` },
+        { hreflang: 'x-default', href: `${BASE}/en/privacy` },
+      ],
+      priority: '0.3',
+      changefreq: 'yearly',
+    },
   ];
+
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-${urls
+${pages
   .map(
-    (u) => `  <url>
-    <loc>${u.loc}</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="${BASE}/en/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="${BASE}/nl/"/>
-    <changefreq>monthly</changefreq>
-    <priority>${u.loc.includes('guides') || u.loc.includes('gidsen') ? '0.7' : '1.0'}</priority>
+    (page) => `  <url>
+    <loc>${page.loc}</loc>
+${page.alternates
+  .map(
+    (alt) =>
+      `    <xhtml:link rel="alternate" hreflang="${alt.hreflang}" href="${alt.href}"/>`
+  )
+  .join('\n')}
+    <changefreq>${page.changefreq}</changefreq>
+    <priority>${page.priority}</priority>
   </url>`
   )
   .join('\n')}
@@ -285,50 +356,21 @@ ${urls
 function writeRedirects() {
   fs.writeFileSync(
     path.join(ROOT, '_redirects'),
-    `/ /en/ 302\n`
+    `/ /en/ 301
+/en/guides/marbella.html /en/guides/marbella 301
+/nl/gidsen/marbella.html /nl/gidsen/marbella 301
+/en/privacy.html /en/privacy 301
+/nl/privacy.html /nl/privacy 301
+`
   );
 }
 
-function guidePage(lang) {
-  const en = lang === 'en';
-  const title = en
-    ? 'Buying property in Marbella — AGG.homes guide'
-    : 'Woning kopen in Marbella — AGG.homes gids';
-  const canonical = en
-    ? `${BASE}/en/guides/marbella.html`
-    : `${BASE}/nl/gidsen/marbella.html`;
-  const other = en ? '/nl/gidsen/marbella.html' : '/en/guides/marbella.html';
-  return `<!DOCTYPE html>
-<html lang="${lang}">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${title}</title>
-<meta name="description" content="${en ? 'Practical overview for international buyers considering property in Marbella and the western Costa del Sol.' : 'Praktisch overzicht voor internationale kopers die een woning overwegen in Marbella en de westelijke Costa del Sol.'}">
-<link rel="canonical" href="${canonical}">
-<link rel="alternate" hreflang="en" href="${BASE}/en/guides/marbella.html">
-<link rel="alternate" hreflang="nl" href="${BASE}/nl/gidsen/marbella.html">
-<link rel="alternate" hreflang="x-default" href="${BASE}/en/guides/marbella.html">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-body{font-family:Inter,sans-serif;max-width:720px;margin:0 auto;padding:48px 24px;color:#1C1C1A;line-height:1.7}
-h1{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500}
-a{color:#A8895C}
-nav{margin-bottom:2rem;font-size:.9rem}
-</style>
-</head>
-<body>
-<nav><a href="${en ? '/en/' : '/nl/'}">← AGG.homes</a> · <a href="${other}" hreflang="${en ? 'nl' : 'en'}">${en ? 'Nederlands' : 'English'}</a></nav>
-<h1>${en ? 'Buying property in Marbella' : 'Woning kopen in Marbella'}</h1>
-<p>${en
-    ? 'Marbella attracts buyers for its climate, infrastructure and mix of apartments, townhouses and villas from €300k to €5m+. Most international purchases involve a local lawyer, mortgage pre-approval (if needed), reservation contract and notary completion.'
-    : 'Marbella trekt kopers door het klimaat, infrastructuur en aanbod van appartementen, rijwoningen en villa’s van €300k tot €5m+. Internationale aankopen verlopen meestal met een lokale advocaat, eventuele hypotheekvoorbereiding, reserveringscontract en notarisafhandeling.'}</p>
-<p>${en
-    ? 'AGG.homes does not sell property directly — A. Gonzalez introduces you to an established agency that matches your area, budget and timeline, at no extra cost to you.'
-    : 'AGG.homes verkoopt geen woningen rechtstreeks — A. Gonzalez introduceert u bij een gevestigd kantoor dat past bij uw gebied, budget en planning, zonder extra kosten voor u.'}</p>
-<p><a href="${en ? '/en/#contact' : '/nl/#contact'}">${en ? 'Start your search' : 'Start uw zoektocht'}</a></p>
-</body>
-</html>`;
+function copyContentPage(src, dest) {
+  if (!fs.existsSync(src)) {
+    throw new Error(`Missing content source: ${src}`);
+  }
+  fs.mkdirSync(path.dirname(dest), { recursive: true });
+  fs.copyFileSync(src, dest);
 }
 
 if (!fs.existsSync(TEMPLATE)) {
@@ -346,12 +388,22 @@ for (const lang of ['en', 'nl']) {
   fs.writeFileSync(path.join(dir, 'index.html'), buildPage(lang));
 }
 
-const enGuides = path.join(ROOT, 'en', 'guides');
-const nlGidsen = path.join(ROOT, 'nl', 'gidsen');
-fs.mkdirSync(enGuides, { recursive: true });
-fs.mkdirSync(nlGidsen, { recursive: true });
-fs.writeFileSync(path.join(enGuides, 'marbella.html'), guidePage('en'));
-fs.writeFileSync(path.join(nlGidsen, 'marbella.html'), guidePage('nl'));
+copyContentPage(
+  path.join(ROOT, 'content', 'guides', 'marbella.en.html'),
+  path.join(ROOT, 'en', 'guides', 'marbella.html')
+);
+copyContentPage(
+  path.join(ROOT, 'content', 'guides', 'marbella.nl.html'),
+  path.join(ROOT, 'nl', 'gidsen', 'marbella.html')
+);
+copyContentPage(
+  path.join(ROOT, 'content', 'privacy', 'en.html'),
+  path.join(ROOT, 'en', 'privacy.html')
+);
+copyContentPage(
+  path.join(ROOT, 'content', 'privacy', 'nl.html'),
+  path.join(ROOT, 'nl', 'privacy.html')
+);
 
 writeRedirectIndex();
 writeRobots();

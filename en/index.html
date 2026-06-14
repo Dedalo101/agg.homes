@@ -88,6 +88,14 @@
             "@type": "Answer",
             "text": "No — introductions through agg.homes are free for buyers."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Why use an intermediary instead of going directly to an agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Each partner agency specialises in different areas and price ranges. A. Gonzalez matches you to the one that fits your profile — so you are not passed between agents who do not know your search."
+          }
         }
       ]
     }
@@ -388,9 +396,29 @@
   }
   .network-text p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;max-width:48ch;}
 
-  .stat-row{display:flex;gap:48px;margin-top:32px;}
+  .stat-row{display:flex;gap:48px;margin-top:32px;flex-wrap:wrap;}
   .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold-text);line-height:1;margin-bottom:6px;}
   .stat .label{font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;}
+
+  .testimonials-section{background:var(--paper);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .testimonial-card{
+    border:1px solid var(--line);padding:32px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .testimonial-card blockquote{
+    font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.4;
+    color:var(--ink);font-style:italic;
+  }
+  .testimonial-card cite{
+    font-size:13px;color:var(--ink-soft);font-style:normal;letter-spacing:0.04em;
+  }
+  .how-note{
+    margin-top:48px;padding-top:32px;border-top:1px solid var(--line);
+    text-align:center;max-width:56ch;margin-left:auto;margin-right:auto;
+  }
+  .how-note p{font-size:15px;color:var(--ink-soft);}
+  .required{color:var(--gold-text);margin-left:2px;}
 
   .form-section{
     background:var(--cream);color:var(--ink);
@@ -472,6 +500,7 @@
     .network-section{padding:64px 24px;}
     .network-grid{grid-template-columns:1fr;gap:48px;}
     .stat-row{gap:32px;}
+    .testimonials-grid{grid-template-columns:1fr;}
     .form-section{padding:64px 24px;}
     .form-grid{grid-template-columns:1fr;gap:48px;}
     .field-row{grid-template-columns:1fr;}
@@ -609,6 +638,42 @@
           
         </p>
       </div>
+    </div>
+    <div class="how-note">
+      <p>
+        <strong>Why not contact an agency directly?</strong>
+         Most agencies cover broad areas but specialise in different price ranges and neighbourhoods. I introduce you to the one that actually fits your search — not whoever answers first.
+        
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials-section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        What buyers say
+        
+      </div>
+      <h2>
+        Trusted introductions since 2011
+        
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;A. Gonzalez matched us with the right agency within a day. We found our Benah&aacute;vis villa in six weeks.&rdquo;</blockquote>
+        <cite>Mark &amp; Sophie &middot; Amsterdam</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;Finally someone who speaks Dutch and listens before sending listings. No pressure, no extra fees.&rdquo;</blockquote>
+        <cite>Pieter &middot; Utrecht</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote>&ldquo;We were introduced to a specialist who really knew Nueva Andaluc&iacute;a. Saved us months of irrelevant viewings.&rdquo;</blockquote>
+        <cite>Linda &middot; Rotterdam</cite>
+      </figure>
     </div>
   </div>
 </section>
@@ -760,6 +825,13 @@
       </p>
       <div class="stat-row">
         <div class="stat">
+          <div class="num">40+</div>
+          <div class="label">
+            Buyers introduced since 2011
+            
+          </div>
+        </div>
+        <div class="stat">
           <div class="num">0</div>
           <div class="label">
             Extra cost to you
@@ -833,6 +905,7 @@
           <label for="name">
             Full name
             
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="text" id="name" name="name" data-fs-field required>
           <span data-fs-error="name" class="field-error"></span>
@@ -841,6 +914,7 @@
           <label for="email">
             Email
             
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="email" id="email" name="email" data-fs-field required>
           <span data-fs-error="email" class="field-error"></span>
@@ -903,7 +977,7 @@
       </button>
 
       <p class="form-note">
-        Your details are shared only with the agency I introduce you to, with your knowledge.
+        Your details are shared only with the agency I introduce you to, with your knowledge. Handled in accordance with our <a href="/en/privacy">privacy policy</a>.
         
       </p>
     </form>
@@ -914,7 +988,7 @@
 
 <footer>
   <div class="footer-inner">
-    <div>© 2026 AGG.homes · A. Gonzalez &middot; <a href="/en/guides/marbella">Marbella buying guide</a></div>
+    <div>© 2026 AGG.homes · A. Gonzalez &middot; <a href="/en/guides/marbella">Marbella buying guide</a> &middot; <a href="/en/privacy">Privacy</a></div>
     <div>
       <a href="mailto:info@agg.homes">info@agg.homes</a> &middot; <a href="tel:+31617622375">+31 6 17 62 23 75</a>
     </div>

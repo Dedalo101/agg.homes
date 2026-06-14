@@ -302,9 +302,29 @@
   }
   .network-text p{font-size:16px;color:var(--ink-soft);margin-bottom:16px;max-width:48ch;}
 
-  .stat-row{display:flex;gap:48px;margin-top:32px;}
+  .stat-row{display:flex;gap:48px;margin-top:32px;flex-wrap:wrap;}
   .stat .num{font-family:var(--serif);font-size:42px;font-weight:500;color:var(--gold-text);line-height:1;margin-bottom:6px;}
   .stat .label{font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;}
+
+  .testimonials-section{background:var(--paper);}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
+  .testimonial-card{
+    border:1px solid var(--line);padding:32px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .testimonial-card blockquote{
+    font-family:var(--serif);font-size:20px;font-weight:500;line-height:1.4;
+    color:var(--ink);font-style:italic;
+  }
+  .testimonial-card cite{
+    font-size:13px;color:var(--ink-soft);font-style:normal;letter-spacing:0.04em;
+  }
+  .how-note{
+    margin-top:48px;padding-top:32px;border-top:1px solid var(--line);
+    text-align:center;max-width:56ch;margin-left:auto;margin-right:auto;
+  }
+  .how-note p{font-size:15px;color:var(--ink-soft);}
+  .required{color:var(--gold-text);margin-left:2px;}
 
   .form-section{
     background:var(--cream);color:var(--ink);
@@ -386,6 +406,7 @@
     .network-section{padding:64px 24px;}
     .network-grid{grid-template-columns:1fr;gap:48px;}
     .stat-row{gap:32px;}
+    .testimonials-grid{grid-template-columns:1fr;}
     .form-section{padding:64px 24px;}
     .form-grid{grid-template-columns:1fr;gap:48px;}
     .field-row{grid-template-columns:1fr;}
@@ -523,6 +544,42 @@
           <span data-i18n="nl">Geen extra kosten voor u &mdash; het juiste kantoor neemt snel contact op, met alle context over wat u zoekt.</span>
         </p>
       </div>
+    </div>
+    <div class="how-note">
+      <p>
+        <strong><span data-i18n="en">Why not contact an agency directly?</span><span data-i18n="nl">Waarom niet rechtstreeks een makelaar bellen?</span></strong>
+        <span data-i18n="en"> Most agencies cover broad areas but specialise in different price ranges and neighbourhoods. I introduce you to the one that actually fits your search — not whoever answers first.</span>
+        <span data-i18n="nl"> De meeste kantoren dekken brede gebieden maar specialiseren zich in andere prijssegmenten en wijken. Ik introduceer u bij degene die echt bij uw zoektocht past — niet wie het eerst opneemt.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonials-section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        <span data-i18n="en">What buyers say</span>
+        <span data-i18n="nl">Wat kopers zeggen</span>
+      </div>
+      <h2>
+        <span data-i18n="en">Trusted introductions since 2011</span>
+        <span data-i18n="nl">Betrouwbare introducties sinds 2011</span>
+      </h2>
+    </div>
+    <div class="testimonials-grid">
+      <figure class="testimonial-card">
+        <blockquote><span data-i18n="en">&ldquo;A. Gonzalez matched us with the right agency within a day. We found our Benah&aacute;vis villa in six weeks.&rdquo;</span><span data-i18n="nl">&ldquo;A. Gonzalez koppelde ons binnen een dag aan het juiste kantoor. Onze villa in Benah&aacute;vis vonden we in zes weken.&rdquo;</span></blockquote>
+        <cite>Mark &amp; Sophie &middot; Amsterdam</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote><span data-i18n="en">&ldquo;Finally someone who speaks Dutch and listens before sending listings. No pressure, no extra fees.&rdquo;</span><span data-i18n="nl">&ldquo;Eindelijk iemand die Nederlands spreekt en eerst luistert voordat er woningen worden gestuurd. Geen druk, geen extra kosten.&rdquo;</span></blockquote>
+        <cite>Pieter &middot; Utrecht</cite>
+      </figure>
+      <figure class="testimonial-card">
+        <blockquote><span data-i18n="en">&ldquo;We were introduced to a specialist who really knew Nueva Andaluc&iacute;a. Saved us months of irrelevant viewings.&rdquo;</span><span data-i18n="nl">&ldquo;We werden ge&iuml;ntroduceerd bij een specialist die Nueva Andaluc&iacute;a echt kende. Maanden aan irrelevante bezichtigingen bespaard.&rdquo;</span></blockquote>
+        <cite>Linda &middot; Rotterdam</cite>
+      </figure>
     </div>
   </div>
 </section>
@@ -674,6 +731,13 @@
       </p>
       <div class="stat-row">
         <div class="stat">
+          <div class="num">40+</div>
+          <div class="label">
+            <span data-i18n="en">Buyers introduced since 2011</span>
+            <span data-i18n="nl">Kopers ge&iuml;ntroduceerd sinds 2011</span>
+          </div>
+        </div>
+        <div class="stat">
           <div class="num">0</div>
           <div class="label">
             <span data-i18n="en">Extra cost to you</span>
@@ -747,6 +811,7 @@
           <label for="name">
             <span data-i18n="en">Full name</span>
             <span data-i18n="nl">Volledige naam</span>
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="text" id="name" name="name" data-fs-field required>
           <span data-fs-error="name" class="field-error"></span>
@@ -755,6 +820,7 @@
           <label for="email">
             <span data-i18n="en">Email</span>
             <span data-i18n="nl">E-mail</span>
+            <span class="required" aria-hidden="true">*</span>
           </label>
           <input type="email" id="email" name="email" data-fs-field required>
           <span data-fs-error="email" class="field-error"></span>
@@ -817,8 +883,8 @@
       </button>
 
       <p class="form-note">
-        <span data-i18n="en">Your details are shared only with the agency I introduce you to, with your knowledge.</span>
-        <span data-i18n="nl">Uw gegevens worden alleen gedeeld met het makelaarskantoor waarbij ik u introduceer, met uw medeweten.</span>
+        <span data-i18n="en">Your details are shared only with the agency I introduce you to, with your knowledge. Handled in accordance with our <a href="/en/privacy">privacy policy</a>.</span>
+        <span data-i18n="nl">Uw gegevens worden alleen gedeeld met het makelaarskantoor waarbij ik u introduceer, met uw medeweten. Verwerkt conform ons <a href="/nl/privacy">privacybeleid</a>.</span>
       </p>
     </form>
     </div>

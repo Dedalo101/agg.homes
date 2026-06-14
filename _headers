@@ -45,3 +45,9 @@
 
 /nl/gidsen/*
   Cache-Control: public, max-age=86400
+
+/en/privacy
+  Cache-Control: public, max-age=86400
+
+/nl/privacy
+  Cache-Control: public, max-age=86400
