@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="AGG.homes Costa del Sol property introductions">
+  <title>AGG.homes — Costa del Sol property introductions</title>
+  <!-- Sky -->
+  <rect width="1200" height="252" fill="#1a3a5c"/>
+  <!-- Gold horizon -->
+  <rect y="252" width="1200" height="4" fill="#c9a96e"/>
+  <!-- Villa wall -->
+  <rect y="256" width="1200" height="374" fill="#f5f0e8"/>
+  <!-- Pool / terrace lower third -->
+  <rect y="420" width="1200" height="210" fill="#e8e2d6"/>
+  <rect y="420" width="1200" height="6" fill="#c9a96e" opacity="0.45"/>
+  <!-- Architectural arch silhouette -->
+  <path fill="#ffffff" d="M720 256h200v374h-200z"/>
+  <path fill="#f5f0e8" d="M760 256h120v374h-120z"/>
+  <path fill="#ffffff" d="M760 320a60 60 0 0 1 120 0v310h-120z"/>
+  <path fill="#e8e2d6" d="M785 320a35 35 0 0 1 70 0v290h-70z"/>
+  <!-- Colonnade left -->
+  <rect x="120" y="280" width="28" height="350" fill="#ffffff"/>
+  <rect x="180" y="280" width="28" height="350" fill="#ffffff"/>
+  <rect x="240" y="280" width="28" height="350" fill="#ffffff"/>
+  <rect x="100" y="280" width="188" height="18" fill="#ffffff"/>
+  <!-- Pool geometry -->
+  <rect x="80" y="480" width="420" height="120" rx="4" fill="#b8d4e8" opacity="0.55"/>
+  <rect x="100" y="500" width="380" height="80" rx="2" fill="#8fb8d4" opacity="0.35"/>
+  <!-- Text block — kept within central 630x630 safe zone -->
+  <rect x="48" y="430" width="520" height="160" fill="#0a1a0f" opacity="0.72" rx="2"/>
+  <text x="72" y="510" fill="#c9a96e" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700">AGG.homes</text>
+  <text x="72" y="555" fill="#f5f0e8" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="300">Costa del Sol · Property introductions</text>
+</svg>

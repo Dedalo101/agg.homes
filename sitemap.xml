@@ -34,18 +34,18 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://agg.homes/nl/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy"/>
+    <loc>https://agg.homes/nl/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy/"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://agg.homes/en/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy"/>
+    <loc>https://agg.homes/en/privacy/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy/"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

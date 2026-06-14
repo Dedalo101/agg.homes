@@ -11,6 +11,20 @@ const BASE = 'https://agg.homes';
 const DEFAULT_LANG = 'nl';
 const X_DEFAULT = `${BASE}/nl/`;
 
+const BRAND_HEAD = `<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a1a0f">`;
+
+const OG_IMAGE_META = `<meta property="og:image" content="${BASE}/images/og-social.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="AGG.homes — Costa del Sol property introductions by A. Gonzalez">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="${BASE}/images/og-social.jpg">`;
+
 const META = {
   en: {
     lang: 'en',
@@ -204,7 +218,7 @@ function buildPage(lang) {
 <meta property="og:url" content="${meta.canonical}">
 <meta property="og:title" content="${meta.title}">
 <meta property="og:description" content="${meta.description}">
-<meta property="og:image" content="${BASE}/images/photo.webp">
+${OG_IMAGE_META}
 <script type="application/ld+json">${schemaJson(meta)}</script>`;
 
   html = html.replace(/<meta name="description"[^>]*>/i, (m) => m + seoBlock);
@@ -264,7 +278,7 @@ function buildPage(lang) {
 
   const guideHref = lang === 'en' ? '/en/guides/marbella' : '/nl/gidsen/marbella';
   const guideLabel = lang === 'en' ? 'Marbella buying guide' : 'Marbella-koopgids';
-  const privacyHref = lang === 'en' ? '/en/privacy' : '/nl/privacy';
+  const privacyHref = lang === 'en' ? '/en/privacy/' : '/nl/privacy/';
   const privacyLabel = lang === 'en' ? 'Privacy' : 'Privacy';
   html = html.replace(
     /&copy; 2026 Marbella Match &middot; A\. Gonzalez/,
@@ -284,6 +298,7 @@ function writeRedirectIndex() {
 <html lang="nl">
 <head>
 <meta charset="UTF-8">
+${BRAND_HEAD}
 <meta http-equiv="refresh" content="0;url=/nl/">
 <link rel="canonical" href="${X_DEFAULT}">
 <link rel="alternate" hreflang="nl" href="${BASE}/nl/">
@@ -316,9 +331,9 @@ function writeSitemap() {
     { hreflang: 'x-default', href: `${BASE}/nl/gidsen/marbella` },
   ];
   const privacyAlternates = [
-    { hreflang: 'nl', href: `${BASE}/nl/privacy` },
-    { hreflang: 'en', href: `${BASE}/en/privacy` },
-    { hreflang: 'x-default', href: `${BASE}/nl/privacy` },
+    { hreflang: 'nl', href: `${BASE}/nl/privacy/` },
+    { hreflang: 'en', href: `${BASE}/en/privacy/` },
+    { hreflang: 'x-default', href: `${BASE}/nl/privacy/` },
   ];
   const pages = [
     {
@@ -346,13 +361,13 @@ function writeSitemap() {
       changefreq: 'monthly',
     },
     {
-      loc: `${BASE}/nl/privacy`,
+      loc: `${BASE}/nl/privacy/`,
       alternates: privacyAlternates,
       priority: '0.3',
       changefreq: 'yearly',
     },
     {
-      loc: `${BASE}/en/privacy`,
+      loc: `${BASE}/en/privacy/`,
       alternates: privacyAlternates,
       priority: '0.3',
       changefreq: 'yearly',
@@ -387,8 +402,10 @@ function writeRedirects() {
     `/ /nl/ 301
 /en/guides/marbella.html /en/guides/marbella 301
 /nl/gidsen/marbella.html /nl/gidsen/marbella 301
-/en/privacy.html /en/privacy 301
-/nl/privacy.html /nl/privacy 301
+/en/privacy.html /en/privacy/ 301
+/nl/privacy.html /nl/privacy/ 301
+/en/privacy /en/privacy/ 301
+/nl/privacy /nl/privacy/ 301
 `
   );
 }
@@ -425,13 +442,20 @@ copyContentPage(
   path.join(ROOT, 'nl', 'gidsen', 'marbella.html')
 );
 copyContentPage(
-  path.join(ROOT, 'content', 'privacy', 'en.html'),
-  path.join(ROOT, 'en', 'privacy.html')
+  path.join(ROOT, 'content', 'privacy', 'en', 'index.html'),
+  path.join(ROOT, 'en', 'privacy', 'index.html')
 );
 copyContentPage(
-  path.join(ROOT, 'content', 'privacy', 'nl.html'),
-  path.join(ROOT, 'nl', 'privacy.html')
+  path.join(ROOT, 'content', 'privacy', 'nl', 'index.html'),
+  path.join(ROOT, 'nl', 'privacy', 'index.html')
 );
+
+for (const legacy of [
+  path.join(ROOT, 'en', 'privacy.html'),
+  path.join(ROOT, 'nl', 'privacy.html'),
+]) {
+  if (fs.existsSync(legacy)) fs.unlinkSync(legacy);
+}
 
 writeRedirectIndex();
 writeRobots();
