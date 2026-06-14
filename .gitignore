@@ -1,3 +1,4 @@
 .wrangler/
+node_modules/
 lh-*.json
 ps-mobile.json
