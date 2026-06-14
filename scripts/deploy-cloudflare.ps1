@@ -6,7 +6,8 @@ if ($LASTEXITCODE -ne 0) {
   Write-Error "Not logged in. Run: npx wrangler login"
 }
 
-node scripts/optimize-assets.js
+npm ci
+node scripts/generate-brand-assets.js
 node scripts/build-lang-pages.js
 npx wrangler pages deploy . --project-name=$ProjectName --branch=main --commit-dirty=true
 Write-Host "Deployed to https://${ProjectName}.pages.dev"
