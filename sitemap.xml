@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://agg.homes/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/"/>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://agg.homes/nl/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/"/>
-    <changefreq>monthly</changefreq>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/"/>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://agg.homes/en/guides/marbella</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/guides/marbella"/>
-    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/gidsen/marbella"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/guides/marbella"/>
+    <loc>https://agg.homes/en/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/"/>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://agg.homes/nl/gidsen/marbella</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/guides/marbella"/>
     <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/gidsen/marbella"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/guides/marbella"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/guides/marbella"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/gidsen/marbella"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://agg.homes/en/guides/marbella</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/gidsen/marbella"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/guides/marbella"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/gidsen/marbella"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://agg.homes/en/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
+    <loc>https://agg.homes/nl/privacy</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://agg.homes/nl/privacy</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
+    <loc>https://agg.homes/en/privacy</loc>
     <xhtml:link rel="alternate" hreflang="nl" href="https://agg.homes/nl/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://agg.homes/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://agg.homes/nl/privacy"/>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

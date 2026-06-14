@@ -8,6 +8,8 @@ const path = require('path');
 const ROOT = path.join(__dirname, '..');
 const TEMPLATE = path.join(ROOT, 'index.template.html');
 const BASE = 'https://agg.homes';
+const DEFAULT_LANG = 'nl';
+const X_DEFAULT = `${BASE}/nl/`;
 
 const META = {
   en: {
@@ -41,18 +43,21 @@ const META = {
   },
   nl: {
     lang: 'nl',
-    title: 'A. Gonzalez · agg.homes — Woningen aan de Costa del Sol',
+    title:
+      'Woning kopen Marbella & Costa del Sol | Nieuwbouw & off-market | AGG.homes',
     description:
-      'A. Gonzalez begeleidt Nederlandse en internationale kopers naar betrouwbare makelaars in Marbella, Nueva Andalucía, Estepona en Benahávis. Persoonlijke, gratis introducties via agg.homes.',
+      'Woning kopen in Marbella, Estepona of Benahávis? Nederlandse begeleiding bij nieuwbouw, off-market villa\'s en exclusief vastgoed. Gratis introductie bij de juiste makelaar — sinds 2011.',
+    keywords:
+      'woning kopen Marbella, woning kopen Spanje, Costa del Sol vastgoed, nieuwbouw Marbella, villa kopen Marbella, off-market woningen, tweede woning Spanje, appartement kopen Costa del Sol, vastgoed belegging Spanje, kosten koper Spanje',
     canonical: `${BASE}/nl/`,
     logo: 'AGG<em>.homes</em>',
     logoAria: 'AGG.homes',
     footer: '© 2026 AGG.homes · A. Gonzalez',
     photoAlt:
-      'A. Gonzalez, onafhankelijk woonadviseur in Marbella, Costa del Sol',
+      'A. Gonzalez, Nederlands sprekend woonadviseur voor woning kopen in Marbella en Costa del Sol',
     otherLang: { href: '/en/', label: 'EN', code: 'en' },
     schemaDesc:
-      'Onafhankelijk woonadviseur die kopers koppelt aan betrouwbare makelaars aan de Costa del Sol.',
+      'Nederlands sprekend woonadviseur voor woning kopen aan de Costa del Sol: nieuwbouw Marbella, off-market villa\'s, appartementen en exclusief vastgoed voor Nederlandse kopers.',
     faq: [
       {
         q: 'Hoe snel reageert A. Gonzalez?',
@@ -65,6 +70,22 @@ const META = {
       {
         q: 'Waarom een tussenpersoon in plaats van rechtstreeks naar een makelaar?',
         a: 'Elk partnerkantoor specialiseert zich in andere gebieden en prijssegmenten. A. Gonzalez koppelt u aan degene die bij uw profiel past — zodat u niet wordt doorverwezen tussen makelaars die uw zoektocht niet kennen.',
+      },
+      {
+        q: 'Waar vind ik nieuwbouw in Marbella en Estepona?',
+        a: 'Via ons netwerk heeft u toegang tot nieuwbouwprojecten en recent opgeleverde woningen in Marbella, Estepona, Nueva Andalucía en Benahávis — vaak vóór publicatie op grote portals.',
+      },
+      {
+        q: 'Wat zijn off-market woningen aan de Costa del Sol?',
+        a: 'Off-market woningen (verborgen aanbod) zijn villa\'s en appartementen die niet op openbare websites staan. Partnermakelaars delen deze exclusieve objecten met serieuze kopers via hun netwerk.',
+      },
+      {
+        q: 'Wat kost woning kopen in Spanje voor Nederlanders?',
+        a: 'Reken op 10–13% boven de koopprijs aan kosten koper: overdrachtsbelasting, notaris, advocaat en eventuele hypotheekkosten. Wij koppelen u aan een makelaar die uw budget en fiscaliteit begrijpt.',
+      },
+      {
+        q: 'Kan ik als Nederlander een hypotheek krijgen voor een woning in Spanje?',
+        a: 'Ja. Spaanse banken verstrekken hypotheken aan niet-ingezetenen, meestal tot 60–70% van de waarde. Onze partners begeleiden u bij de voorbereiding, inclusief NIE-nummer en taxatie.',
       },
     ],
   },
@@ -166,11 +187,19 @@ function buildPage(lang) {
     `<meta name="description" content="${meta.description}">`
   );
 
+  const keywordsTag = meta.keywords
+    ? `\n<meta name="keywords" content="${meta.keywords}">`
+    : '';
+  const localeTag =
+    meta.lang === 'nl'
+      ? `\n<meta property="og:locale" content="nl_NL">\n<meta property="og:locale:alternate" content="en_GB">`
+      : `\n<meta property="og:locale" content="en_GB">\n<meta property="og:locale:alternate" content="nl_NL">`;
+
   const seoBlock = `
 <link rel="canonical" href="${meta.canonical}">
-<link rel="alternate" hreflang="en" href="${BASE}/en/">
 <link rel="alternate" hreflang="nl" href="${BASE}/nl/">
-<link rel="alternate" hreflang="x-default" href="${BASE}/en/">
+<link rel="alternate" hreflang="en" href="${BASE}/en/">
+<link rel="alternate" hreflang="x-default" href="${X_DEFAULT}">${keywordsTag}${localeTag}
 <meta property="og:type" content="website">
 <meta property="og:url" content="${meta.canonical}">
 <meta property="og:title" content="${meta.title}">
@@ -190,11 +219,19 @@ function buildPage(lang) {
     `<div class="logo" aria-label="${meta.logoAria}">${meta.logo}</div>`
   );
 
+  const nlLink =
+    meta.lang === 'nl'
+      ? `<a href="${BASE}/nl/" class="active" hreflang="nl" lang="nl">NL</a>`
+      : `<a href="${BASE}/nl/" hreflang="nl" lang="nl">NL</a>`;
+  const enLink =
+    meta.lang === 'en'
+      ? `<a href="${BASE}/en/" class="active" hreflang="en" lang="en">EN</a>`
+      : `<a href="${BASE}/en/" hreflang="en" lang="en">EN</a>`;
   html = html.replace(
     /<div class="lang-toggle"[\s\S]*?<\/div>/,
     `<nav class="lang-toggle" aria-label="Language">
-    <a href="${meta.canonical}" class="active" hreflang="${meta.lang}" lang="${meta.lang}">${lang.toUpperCase()}</a>
-    <a href="${meta.otherLang.href}" hreflang="${meta.otherLang.code}" lang="${meta.otherLang.code}">${meta.otherLang.label}</a>
+    ${nlLink}
+    ${enLink}
   </nav>`
   );
 
@@ -244,18 +281,18 @@ function buildPage(lang) {
 
 function writeRedirectIndex() {
   const html = `<!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0;url=/en/">
-<link rel="canonical" href="https://agg.homes/en/">
-<link rel="alternate" hreflang="en" href="https://agg.homes/en/">
-<link rel="alternate" hreflang="nl" href="https://agg.homes/nl/">
-<link rel="alternate" hreflang="x-default" href="https://agg.homes/en/">
-<title>AGG.homes — Redirecting…</title>
-<script>location.replace('/en/');</script>
+<meta http-equiv="refresh" content="0;url=/nl/">
+<link rel="canonical" href="${X_DEFAULT}">
+<link rel="alternate" hreflang="nl" href="${BASE}/nl/">
+<link rel="alternate" hreflang="en" href="${BASE}/en/">
+<link rel="alternate" hreflang="x-default" href="${X_DEFAULT}">
+<title>AGG.homes — Doorverwijzen…</title>
+<script>location.replace('/nl/');</script>
 </head>
-<body><p><a href="/en/">Continue to AGG.homes</a></p></body>
+<body><p><a href="/nl/">Ga verder naar AGG.homes</a></p></body>
 </html>`;
   fs.writeFileSync(path.join(ROOT, 'index.html'), html);
 }
@@ -268,64 +305,55 @@ function writeRobots() {
 }
 
 function writeSitemap() {
+  const homeAlternates = [
+    { hreflang: 'nl', href: `${BASE}/nl/` },
+    { hreflang: 'en', href: `${BASE}/en/` },
+    { hreflang: 'x-default', href: X_DEFAULT },
+  ];
+  const guideAlternates = [
+    { hreflang: 'nl', href: `${BASE}/nl/gidsen/marbella` },
+    { hreflang: 'en', href: `${BASE}/en/guides/marbella` },
+    { hreflang: 'x-default', href: `${BASE}/nl/gidsen/marbella` },
+  ];
+  const privacyAlternates = [
+    { hreflang: 'nl', href: `${BASE}/nl/privacy` },
+    { hreflang: 'en', href: `${BASE}/en/privacy` },
+    { hreflang: 'x-default', href: `${BASE}/nl/privacy` },
+  ];
   const pages = [
     {
-      loc: `${BASE}/en/`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/` },
-        { hreflang: 'nl', href: `${BASE}/nl/` },
-        { hreflang: 'x-default', href: `${BASE}/en/` },
-      ],
-      priority: '1.0',
-      changefreq: 'monthly',
-    },
-    {
       loc: `${BASE}/nl/`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/` },
-        { hreflang: 'nl', href: `${BASE}/nl/` },
-        { hreflang: 'x-default', href: `${BASE}/en/` },
-      ],
+      alternates: homeAlternates,
       priority: '1.0',
-      changefreq: 'monthly',
+      changefreq: 'weekly',
     },
     {
-      loc: `${BASE}/en/guides/marbella`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/guides/marbella` },
-        { hreflang: 'nl', href: `${BASE}/nl/gidsen/marbella` },
-        { hreflang: 'x-default', href: `${BASE}/en/guides/marbella` },
-      ],
-      priority: '0.7',
+      loc: `${BASE}/en/`,
+      alternates: homeAlternates,
+      priority: '0.8',
       changefreq: 'monthly',
     },
     {
       loc: `${BASE}/nl/gidsen/marbella`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/guides/marbella` },
-        { hreflang: 'nl', href: `${BASE}/nl/gidsen/marbella` },
-        { hreflang: 'x-default', href: `${BASE}/en/guides/marbella` },
-      ],
+      alternates: guideAlternates,
+      priority: '0.9',
+      changefreq: 'weekly',
+    },
+    {
+      loc: `${BASE}/en/guides/marbella`,
+      alternates: guideAlternates,
       priority: '0.7',
       changefreq: 'monthly',
     },
     {
-      loc: `${BASE}/en/privacy`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/privacy` },
-        { hreflang: 'nl', href: `${BASE}/nl/privacy` },
-        { hreflang: 'x-default', href: `${BASE}/en/privacy` },
-      ],
+      loc: `${BASE}/nl/privacy`,
+      alternates: privacyAlternates,
       priority: '0.3',
       changefreq: 'yearly',
     },
     {
-      loc: `${BASE}/nl/privacy`,
-      alternates: [
-        { hreflang: 'en', href: `${BASE}/en/privacy` },
-        { hreflang: 'nl', href: `${BASE}/nl/privacy` },
-        { hreflang: 'x-default', href: `${BASE}/en/privacy` },
-      ],
+      loc: `${BASE}/en/privacy`,
+      alternates: privacyAlternates,
       priority: '0.3',
       changefreq: 'yearly',
     },
@@ -356,7 +384,7 @@ ${page.alternates
 function writeRedirects() {
   fs.writeFileSync(
     path.join(ROOT, '_redirects'),
-    `/ /en/ 301
+    `/ /nl/ 301
 /en/guides/marbella.html /en/guides/marbella 301
 /nl/gidsen/marbella.html /nl/gidsen/marbella 301
 /en/privacy.html /en/privacy 301
