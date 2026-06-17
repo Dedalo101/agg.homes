@@ -21,7 +21,7 @@ async function exportOgJpg() {
 }
 
 async function main() {
-  const favicon = path.join(ROOT, 'favicon.svg');
+  const favicon = path.join(ROOT, 'favicon-source.png');
   await exportPng(favicon, path.join(ROOT, 'favicon-32.png'), 32);
   await exportPng(favicon, path.join(ROOT, 'favicon-180.png'), 180);
   await exportPng(favicon, path.join(ROOT, 'favicon-192.png'), 192);
