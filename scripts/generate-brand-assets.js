@@ -21,11 +21,7 @@ async function exportOgJpg() {
 }
 
 async function main() {
-  const favicon = path.join(ROOT, 'favicon-source.png');
-  await exportPng(favicon, path.join(ROOT, 'favicon-32.png'), 32);
-  await exportPng(favicon, path.join(ROOT, 'favicon-180.png'), 180);
-  await exportPng(favicon, path.join(ROOT, 'favicon-192.png'), 192);
-  await exportPng(favicon, path.join(ROOT, 'favicon-512.png'), 512);
+  // Favicons are static files at the site root (RealFaviconGenerator). Only the OG image is generated.
   await exportOgJpg();
 }
 
