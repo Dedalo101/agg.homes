@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "node scripts/generate-brand-assets.js && node scripts/build-lang-pages.js",
+    "optimize": "node scripts/optimize-assets.js"
+  },
   "devDependencies": {
     "sharp": "^0.35.1"
   }
