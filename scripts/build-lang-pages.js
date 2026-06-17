@@ -36,7 +36,7 @@ const META = {
     canonical: `${BASE}/en/`,
     logo: 'AGG<em>.homes</em>',
     logoAria: 'AGG.homes',
-    footer: '© 2026 AGG.homes · A. Gonzalez',
+    footer: '© 2026 AGG.homes · A. Gonzalez · Johannes Boersma',
     photoAlt:
       'A. Gonzalez, independent property consultant in Marbella, Costa del Sol',
     otherLang: { href: '/nl/', label: 'NL', code: 'nl' },
@@ -68,7 +68,7 @@ const META = {
     canonical: `${BASE}/nl/`,
     logo: 'AGG<em>.homes</em>',
     logoAria: 'AGG.homes',
-    footer: '© 2026 AGG.homes · A. Gonzalez',
+    footer: '© 2026 AGG.homes · A. Gonzalez · Johannes Boersma',
     photoAlt:
       'A. Gonzalez, Nederlands sprekend woonadviseur voor woning kopen in Marbella en Costa del Sol',
     otherLang: { href: '/en/', label: 'EN', code: 'en' },
@@ -152,7 +152,7 @@ function schemaJson(meta) {
             'Benahávis',
             'Málaga',
           ],
-          knowsLanguage: ['en', 'nl', 'es'],
+          knowsLanguage: ['en', 'es'],
           parentOrganization: { '@id': `${meta.canonical}#org` },
         },
         {
@@ -160,6 +160,10 @@ function schemaJson(meta) {
           '@id': `${meta.canonical}#org`,
           name: 'AGG.homes',
           url: BASE,
+          employee: [
+            { '@type': 'Person', name: 'A. Gonzalez', jobTitle: 'Property consultant', knowsLanguage: ['en', 'es'] },
+            { '@type': 'Person', name: 'Johannes Boersma', jobTitle: 'Property consultant', knowsLanguage: ['nl', 'en', 'es'] },
+          ],
           logo: `${BASE}/images/photo.webp`,
           description: meta.schemaDesc,
           address: {

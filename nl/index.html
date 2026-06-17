@@ -51,7 +51,6 @@
       ],
       "knowsLanguage": [
         "en",
-        "nl",
         "es"
       ],
       "parentOrganization": {
@@ -66,6 +65,27 @@
       "@id": "https://agg.homes/nl/#org",
       "name": "AGG.homes",
       "url": "https://agg.homes",
+      "employee": [
+        {
+          "@type": "Person",
+          "name": "A. Gonzalez",
+          "jobTitle": "Property consultant",
+          "knowsLanguage": [
+            "en",
+            "es"
+          ]
+        },
+        {
+          "@type": "Person",
+          "name": "Johannes Boersma",
+          "jobTitle": "Property consultant",
+          "knowsLanguage": [
+            "nl",
+            "en",
+            "es"
+          ]
+        }
+      ],
       "logo": "https://agg.homes/images/photo.webp",
       "description": "Nederlands sprekend woonadviseur voor woning kopen aan de Costa del Sol: nieuwbouw Marbella, off-market villa's, appartementen en exclusief vastgoed voor Nederlandse kopers.",
       "address": {
@@ -346,6 +366,27 @@
   }
   .agent-text .agent-name-row .langs{
     font-size:13px;color:var(--ink-soft);letter-spacing:0.04em;
+  }
+
+  .contacts-grid{
+    max-width:860px;margin:0 auto;
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;
+  }
+  .contact-card{text-align:center;}
+  .contact-card picture{display:block;max-width:240px;margin:0 auto 20px;}
+  .contact-card img{
+    width:100%;aspect-ratio:3/4;object-fit:cover;
+    border:1px solid var(--line);background:#D8D2C4;
+  }
+  .contact-card .cc-name{font-family:var(--serif);font-size:24px;font-weight:500;}
+  .contact-card .cc-role{
+    font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;
+    color:var(--gold-text);margin:8px 0;
+  }
+  .contact-card .cc-langs{font-size:13px;color:var(--ink-soft);}
+  .contact-card .cc-bio{font-size:15px;color:var(--ink-soft);margin:14px auto 0;max-width:34ch;}
+  @media (max-width:680px){
+    .contacts-grid{grid-template-columns:1fr;gap:44px;max-width:320px;}
   }
 
   .section{padding:96px 48px;}
@@ -707,7 +748,56 @@
       </p>
       <div class="agent-name-row">
         <span class="name">A. Gonzalez</span>
-        <span class="langs">Nederlands &middot; English &middot; Espa&ntilde;ol</span>
+        <span class="langs">English &middot; Espa&ntilde;ol</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="team">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="kicker">
+        
+        Het team
+      </div>
+      <h2>
+        
+        Twee lokale contacten, &eacute;&eacute;n vertrouwde introductie
+      </h2>
+    </div>
+    <div class="contacts-grid">
+      <div class="contact-card">
+        <picture>
+          <source srcset="/images/photo.webp?v=4" type="image/webp">
+          <img src="/images/photo.jpg?v=4" alt="A. Gonzalez, property consultant born and raised in Marbella" width="240" height="320" loading="lazy" decoding="async">
+        </picture>
+        <div class="cc-name">A. Gonzalez</div>
+        <div class="cc-role">
+          
+          Lokale woonadviseur
+        </div>
+        <div class="cc-langs">English &middot; Espa&ntilde;ol</div>
+        <p class="cc-bio">
+          
+          Geboren en getogen in Marbella &mdash; een echte local die het gebied door en door kent en u koppelt aan het juiste kantoor.
+        </p>
+      </div>
+      <div class="contact-card">
+        <picture>
+          <source srcset="/images/johannes.webp" type="image/webp">
+          <img src="/images/johannes.jpg" alt="Johannes Boersma, Dutch-speaking property consultant on the Costa del Sol" width="240" height="320" loading="lazy" decoding="async">
+        </picture>
+        <div class="cc-name">Johannes Boersma</div>
+        <div class="cc-role">
+          
+          Nederlandstalige woonadviseur
+        </div>
+        <div class="cc-langs">Nederlands &middot; English &middot; Espa&ntilde;ol</div>
+        <p class="cc-bio">
+          
+          Uw Nederlandstalige contact die Nederlandse en internationale kopers begeleidt aan de hele Costa del Sol.
+        </p>
       </div>
     </div>
   </div>
@@ -1196,7 +1286,7 @@
 
 <footer>
   <div class="footer-inner">
-    <div>© 2026 AGG.homes · A. Gonzalez &middot; <a href="/nl/gidsen/marbella">Marbella-koopgids</a> &middot; <a href="/nl/privacy/">Privacy</a></div>
+    <div>© 2026 AGG.homes · A. Gonzalez · Johannes Boersma &middot; <a href="/nl/gidsen/marbella">Marbella-koopgids</a> &middot; <a href="/nl/privacy/">Privacy</a></div>
     <div>
       <a href="mailto:info@agg.homes">info@agg.homes</a> &middot; <a href="tel:+31617622375">+31 6 17 62 23 75</a> &middot; <a href="https://wa.me/31617622375" target="_blank" rel="nofollow noopener noreferrer">WhatsApp</a>
     </div>
