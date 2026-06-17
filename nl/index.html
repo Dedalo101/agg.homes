@@ -243,9 +243,10 @@
     object-fit:cover;z-index:0;
   }
   .hero::after{
-    content:'';position:absolute;inset:0;
+    content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
     background:
-      radial-gradient(ellipse 70% 50% at 30% 85%, rgba(0,0,0,0.18), transparent 70%);
+      linear-gradient(95deg, rgba(18,18,16,0.82) 0%, rgba(18,18,16,0.55) 33%, rgba(18,18,16,0.22) 60%, rgba(18,18,16,0) 86%),
+      linear-gradient(0deg, rgba(18,18,16,0.48) 0%, rgba(18,18,16,0) 42%);
   }
   .hero-content{
     position:relative;z-index:2;
@@ -254,8 +255,8 @@
     color:#FFF;
   }
   .hero-eyebrow{
-    font-size:13px;font-weight:500;letter-spacing:0.22em;text-transform:uppercase;
-    margin-bottom:24px;color:rgba(255,255,255,0.85);
+    font-size:13px;font-weight:600;letter-spacing:0.24em;text-transform:uppercase;
+    margin-bottom:24px;color:#E3CA98;text-shadow:0 1px 12px rgba(0,0,0,0.45);
   }
   .hero h1{
     font-family:var(--serif);
@@ -266,11 +267,12 @@
     margin-bottom:28px;
     font-synthesis:none;
     text-rendering:optimizeLegibility;
+    text-shadow:0 2px 28px rgba(0,0,0,0.40);
   }
   .hero h1 em{font-style:italic;font-weight:400;}
   .hero p{
-    font-size:18px;font-weight:300;color:rgba(255,255,255,0.92);
-    max-width:42ch;margin-bottom:36px;
+    font-size:18px;font-weight:300;color:rgba(255,255,255,0.95);
+    max-width:42ch;margin-bottom:36px;text-shadow:0 1px 16px rgba(0,0,0,0.42);
   }
   .hero p strong{font-weight:500;}
 
@@ -295,6 +297,21 @@
   }
   .scroll-cue::after{
     content:'';display:block;width:1px;height:40px;background:rgba(255,255,255,0.5);
+  }
+
+  .trust-bar{
+    background:var(--ink);color:rgba(255,255,255,0.82);
+    padding:20px 48px;
+    display:flex;justify-content:center;align-items:center;gap:24px 56px;flex-wrap:wrap;
+    font-size:14.5px;letter-spacing:0.01em;text-align:center;
+  }
+  .trust-bar .ti{display:inline-flex;align-items:baseline;gap:9px;}
+  .trust-bar .ti b{
+    font-family:var(--serif);font-size:23px;font-weight:600;color:#E3CA98;letter-spacing:0;
+  }
+  @media (max-width:680px){
+    .trust-bar{gap:12px 26px;padding:18px 22px;font-size:13px;}
+    .trust-bar .ti b{font-size:20px;}
   }
 
   .agent-band{
@@ -658,6 +675,12 @@
     
     Scroll
   </div>
+</section>
+
+<section class="trust-bar" aria-label="AGG.homes track record">
+  <div class="ti"><b>40+</b> <span>kopers ge&iuml;ntroduceerd sinds 2011</span></div>
+  <div class="ti"><span>Gem. reactietijd</span> <b>&lt; 24h</b></div>
+  <div class="ti"><b>&euro;0</b> <span>extra kosten voor u</span></div>
 </section>
 
 <section class="agent-band">
