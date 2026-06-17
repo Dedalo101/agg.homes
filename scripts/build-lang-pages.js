@@ -290,6 +290,16 @@ ${OG_IMAGE_META}
     ''
   );
 
+  if (lang === 'en') {
+    const waEn = encodeURIComponent(
+      "Hi A. Gonzalez, I'm interested in a property on the Costa del Sol."
+    );
+    html = html.replace(
+      /href="https:\/\/wa\.me\/31617622375\?text=[^"]*"/,
+      `href="https://wa.me/31617622375?text=${waEn}"`
+    );
+  }
+
   return html;
 }
 
