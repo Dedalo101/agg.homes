@@ -185,7 +185,7 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;scroll-padding-top:84px;}
 
   body{
     font-family:var(--sans);
@@ -200,13 +200,16 @@
 
   
   header{
-    position:absolute;top:0;left:0;right:0;z-index:50;
-    padding:32px 48px;
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    padding:18px 48px;
     display:flex;align-items:center;justify-content:space-between;
+    background:rgba(18,18,16,0.5);
+    backdrop-filter:saturate(140%) blur(12px);-webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
   }
   .logo{
     font-family:var(--serif);
-    font-size:26px;font-weight:500;letter-spacing:0.04em;
+    font-size:31px;font-weight:500;letter-spacing:0.04em;
     color:#FFF;
   }
   .logo em{font-style:italic;color:var(--gold);}
@@ -214,8 +217,8 @@
   .lang-toggle{display:flex;gap:8px;}
   .lang-toggle{display:flex;gap:8px;}
   .lang-toggle a{
-    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.08em;
-    padding:6px 14px;border:1px solid rgba(255,255,255,0.35);background:transparent;
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;
+    padding:7px 16px;border:1px solid rgba(255,255,255,0.35);background:transparent;
     color:#FFF;border-radius:0;
     transition:background 0.15s, color 0.15s, border-color 0.15s;
   }
@@ -340,7 +343,7 @@
     display:grid;grid-template-columns:1fr 1fr;gap:56px;
   }
   .contact-card{text-align:center;}
-  .contact-card picture{display:block;max-width:240px;margin:0 auto 20px;}
+  .contact-card picture{display:block;max-width:320px;margin:0 auto 22px;}
   .contact-card img{
     width:100%;aspect-ratio:3/4;object-fit:cover;
     border:1px solid var(--line);background:#D8D2C4;
@@ -694,34 +697,7 @@
   <div class="ti"><b>&euro;0</b> <span>extra cost to you</span></div>
 </section>
 
-<section class="agent-band">
-  <div class="agent-band-inner">
-    <picture>
-      <source srcset="/images/photo.webp?v=4" type="image/webp">
-      <img class="agent-photo" src="/images/photo.jpg?v=4" alt="A. Gonzalez, independent property consultant in Marbella, Costa del Sol" width="280" height="373" loading="lazy" decoding="async">
-    </picture>
-    <div class="agent-text">
-      <div class="kicker">
-        Your local contact
-        
-      </div>
-      <h2>
-        A trusted introduction, before you ever speak to an agency
-        
-      </h2>
-      <p>
-        Buying property abroad starts with knowing who to call. I work with a small group of established Marbella agencies, and I make sure you're introduced to the one that actually fits what you're looking for &mdash; not whichever picks up the phone first.
-        
-      </p>
-      <div class="agent-name-row">
-        <span class="name">A. Gonzalez</span>
-        <span class="langs">English &middot; Espa&ntilde;ol</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="team">
+<section class="section areas-section" id="team">
   <div class="section-inner">
     <div class="section-header">
       <div class="kicker">

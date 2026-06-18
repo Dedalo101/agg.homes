@@ -259,8 +259,8 @@ ${OG_IMAGE_META}
     /\.lang-toggle button\{[\s\S]*?\}\s*\.lang-toggle button\.active\{[\s\S]*?\}/,
     `.lang-toggle{display:flex;gap:8px;}
   .lang-toggle a{
-    font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:0.08em;
-    padding:6px 14px;border:1px solid rgba(255,255,255,0.35);background:transparent;
+    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;
+    padding:7px 16px;border:1px solid rgba(255,255,255,0.35);background:transparent;
     color:#FFF;border-radius:0;
     transition:background 0.15s, color 0.15s, border-color 0.15s;
   }
