@@ -4,6 +4,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const ROOT = path.join(__dirname, '..');
 const TEMPLATE = path.join(ROOT, 'index.template.html');
@@ -18,13 +19,40 @@ const BRAND_HEAD = `<link rel="icon" type="image/png" href="/favicon-96x96.png?v
 <link rel="manifest" href="/site.webmanifest?v=20260617" />
 <meta name="theme-color" content="#0a1a0f">`;
 
-const OG_IMAGE_META = `<meta property="og:image" content="${BASE}/images/og-social.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+// Read the OG image's real pixel size + a content hash, so the social-card
+// tags are always truthful and the URL cache-busts whenever the image changes.
+function readJpegMeta(file) {
+  const buf = fs.readFileSync(file);
+  const hash = crypto.createHash('md5').update(buf).digest('hex').slice(0, 10);
+  let i = 2, width = 0, height = 0;
+  while (i < buf.length - 1) {
+    if (buf[i] !== 0xff) { i++; continue; }
+    const marker = buf[i + 1];
+    // SOF markers carry the frame dimensions (skip DHT 0xC4, JPG 0xC8, DAC 0xCC)
+    if (marker >= 0xc0 && marker <= 0xcf && ![0xc4, 0xc8, 0xcc].includes(marker)) {
+      height = buf.readUInt16BE(i + 5);
+      width = buf.readUInt16BE(i + 7);
+      break;
+    }
+    if (marker === 0xd8 || marker === 0xd9 || (marker >= 0xd0 && marker <= 0xd7)) { i += 2; continue; }
+    i += 2 + buf.readUInt16BE(i + 2);
+  }
+  return { hash, width, height };
+}
+
+const OG_FILE = path.join(ROOT, 'images', 'og-social.jpg');
+const OG = fs.existsSync(OG_FILE)
+  ? readJpegMeta(OG_FILE)
+  : { hash: '1', width: 1200, height: 630 };
+const OG_IMG_URL = `${BASE}/images/og-social.jpg?v=${OG.hash}`;
+
+const OG_IMAGE_META = `<meta property="og:image" content="${OG_IMG_URL}">
+<meta property="og:image:width" content="${OG.width}">
+<meta property="og:image:height" content="${OG.height}">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:alt" content="AGG.homes — Costa del Sol property introductions by A. Gonzalez">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="${BASE}/images/og-social.jpg">`;
+<meta name="twitter:image" content="${OG_IMG_URL}">`;
 
 const META = {
   en: {
@@ -315,12 +343,20 @@ function writeRedirectIndex() {
 <head>
 <meta charset="UTF-8">
 ${BRAND_HEAD}
-<meta http-equiv="refresh" content="0;url=/nl/">
+<meta name="description" content="${META.nl.description}">
 <link rel="canonical" href="${X_DEFAULT}">
 <link rel="alternate" hreflang="nl" href="${BASE}/nl/">
 <link rel="alternate" hreflang="en" href="${BASE}/en/">
 <link rel="alternate" hreflang="x-default" href="${X_DEFAULT}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="${X_DEFAULT}">
+<meta property="og:title" content="${META.nl.title}">
+<meta property="og:description" content="${META.nl.description}">
+<meta property="og:locale" content="nl_NL">
+<meta property="og:locale:alternate" content="en_GB">
+${OG_IMAGE_META}
 <title>AGG.homes — Doorverwijzen…</title>
+<meta http-equiv="refresh" content="0;url=/nl/">
 <script>location.replace('/nl/');</script>
 </head>
 <body><p><a href="/nl/">Ga verder naar AGG.homes</a></p></body>
@@ -416,6 +452,10 @@ function writeRedirects() {
   fs.writeFileSync(
     path.join(ROOT, '_redirects'),
     `/ /nl/ 301
+/NL /nl/ 301
+/NL/ /nl/ 301
+/EN /en/ 301
+/EN/ /en/ 301
 /en/guides/marbella.html /en/guides/marbella 301
 /nl/gidsen/marbella.html /nl/gidsen/marbella 301
 /en/privacy.html /en/privacy/ 301
@@ -431,7 +471,13 @@ function copyContentPage(src, dest) {
     throw new Error(`Missing content source: ${src}`);
   }
   fs.mkdirSync(path.dirname(dest), { recursive: true });
-  fs.copyFileSync(src, dest);
+  let html = fs.readFileSync(src, 'utf8');
+  // Keep the social-card image URL (versioned) + declared size in sync with the real file.
+  html = html
+    .replace(/(content=")[^"]*\/og-social\.jpg(?:\?[^"]*)?(")/g, `$1${OG_IMG_URL}$2`)
+    .replace(/(<meta property="og:image:width" content=")\d+(">)/g, `$1${OG.width}$2`)
+    .replace(/(<meta property="og:image:height" content=")\d+(">)/g, `$1${OG.height}$2`);
+  fs.writeFileSync(dest, html);
 }
 
 if (!fs.existsSync(TEMPLATE)) {
