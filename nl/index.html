@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="/favicon-96x96.png?v=20260617" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260617" />
 <link rel="shortcut icon" href="/favicon.ico?v=20260617" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260617" />
 <meta name="apple-mobile-web-app-title" content="Agg.homes" />
@@ -251,7 +250,8 @@
   .lang-toggle{display:flex;gap:8px;}
   .lang-toggle a{
     font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;
-    padding:7px 16px;border:1px solid rgba(255,255,255,0.35);background:transparent;
+    display:inline-flex;align-items:center;min-height:44px;
+    padding:0 18px;border:1px solid rgba(255,255,255,0.35);background:transparent;
     color:#FFF;border-radius:0;
     transition:background 0.15s, color 0.15s, border-color 0.15s;
   }
@@ -686,14 +686,14 @@
 <header>
   <div class="logo" aria-label="AGG.homes">AGG<em>.homes</em></div>
   <nav class="lang-toggle" aria-label="Language">
-    <a href="https://agg.homes/nl/" class="active" hreflang="nl" lang="nl">NL</a>
+    <a href="https://agg.homes/nl/" class="active" aria-current="page" hreflang="nl" lang="nl">NL</a>
     <a href="https://agg.homes/en/" hreflang="en" lang="en">EN</a>
   </nav>
 </header>
 
 <main>
 <section class="hero">
-  <img class="hero-bg" src="/images/hero-1280.webp" srcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" sizes="100vw" alt="" width="1280" height="720" loading="eager" fetchpriority="high" decoding="async">
+  <img class="hero-bg" src="/images/hero-1280.webp" srcset="/images/hero-800.webp 800w, /images/hero-1280.webp 1280w" sizes="100vw" alt="" width="1280" height="849" loading="eager" fetchpriority="high" decoding="async">
   <div class="hero-content">
     <div class="hero-eyebrow">
       
@@ -1169,6 +1169,7 @@
 
     <div class="form-card">
     <form id="lead-form" action="https://formspree.io/f/mwvjrnyv" method="POST">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
       <div data-fs-success class="form-success">
         
         Dank u &mdash; ik neem binnen 24 uur contact op.
@@ -1181,7 +1182,7 @@
             Volledige naam
             <span class="required" aria-hidden="true">*</span>
           </label>
-          <input type="text" id="name" name="name" data-fs-field required>
+          <input type="text" id="name" name="name" autocomplete="name" data-fs-field required>
           <span data-fs-error="name" class="field-error"></span>
         </div>
         <div class="field">
@@ -1190,7 +1191,7 @@
             E-mail
             <span class="required" aria-hidden="true">*</span>
           </label>
-          <input type="email" id="email" name="email" data-fs-field required>
+          <input type="email" id="email" name="email" autocomplete="email" data-fs-field required>
           <span data-fs-error="email" class="field-error"></span>
         </div>
       </div>
@@ -1200,7 +1201,7 @@
           
           Telefoon / WhatsApp
         </label>
-        <input type="tel" id="phone" name="phone" data-fs-field>
+        <input type="tel" id="phone" name="phone" autocomplete="tel" data-fs-field>
       </div>
 
       <div class="field-row">

@@ -12,7 +12,6 @@ const DEFAULT_LANG = 'nl';
 const X_DEFAULT = `${BASE}/nl/`;
 
 const BRAND_HEAD = `<link rel="icon" type="image/png" href="/favicon-96x96.png?v=20260617" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg?v=20260617" />
 <link rel="shortcut icon" href="/favicon.ico?v=20260617" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=20260617" />
 <meta name="apple-mobile-web-app-title" content="Agg.homes" />
@@ -241,11 +240,11 @@ ${OG_IMAGE_META}
 
   const nlLink =
     meta.lang === 'nl'
-      ? `<a href="${BASE}/nl/" class="active" hreflang="nl" lang="nl">NL</a>`
+      ? `<a href="${BASE}/nl/" class="active" aria-current="page" hreflang="nl" lang="nl">NL</a>`
       : `<a href="${BASE}/nl/" hreflang="nl" lang="nl">NL</a>`;
   const enLink =
     meta.lang === 'en'
-      ? `<a href="${BASE}/en/" class="active" hreflang="en" lang="en">EN</a>`
+      ? `<a href="${BASE}/en/" class="active" aria-current="page" hreflang="en" lang="en">EN</a>`
       : `<a href="${BASE}/en/" hreflang="en" lang="en">EN</a>`;
   html = html.replace(
     /<div class="lang-toggle"[\s\S]*?<\/div>/,
@@ -260,7 +259,8 @@ ${OG_IMAGE_META}
     `.lang-toggle{display:flex;gap:8px;}
   .lang-toggle a{
     font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;
-    padding:7px 16px;border:1px solid rgba(255,255,255,0.35);background:transparent;
+    display:inline-flex;align-items:center;min-height:44px;
+    padding:0 18px;border:1px solid rgba(255,255,255,0.35);background:transparent;
     color:#FFF;border-radius:0;
     transition:background 0.15s, color 0.15s, border-color 0.15s;
   }
