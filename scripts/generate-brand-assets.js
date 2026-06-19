@@ -14,10 +14,16 @@ async function exportPng(svgPath, outPath, size) {
 }
 
 async function exportOgJpg() {
+  // Prefer the real photo source (og-source.jpg); fall back to the brand SVG.
+  const photo = path.join(ROOT, 'images', 'og-source.jpg');
   const svg = path.join(ROOT, 'images', 'og-social.svg');
+  const source = fs.existsSync(photo) ? photo : svg;
   const jpg = path.join(ROOT, 'images', 'og-social.jpg');
-  await sharp(svg).resize(1200, 630).jpeg({ quality: 90 }).toFile(jpg);
-  console.log(`Wrote ${path.relative(ROOT, jpg)} (1200x630)`);
+  await sharp(source)
+    .resize(1200, 630, { fit: 'cover', position: 'centre' })
+    .jpeg({ quality: 82, mozjpeg: true })
+    .toFile(jpg);
+  console.log(`Wrote ${path.relative(ROOT, jpg)} from ${path.basename(source)} (1200x630)`);
 }
 
 async function main() {
