@@ -65,7 +65,7 @@ const META = {
     logoAria: 'AGG.homes',
     footer: '© 2026 AGG.homes · A. Gonzalez · Johannes Boersma',
     photoAlt:
-      'A. Gonzalez, independent property consultant in Marbella, Costa del Sol',
+      'A. Gonzalez and Johannes Boersma, your local property contacts on the Costa del Sol',
     otherLang: { href: '/nl/', label: 'NL', code: 'nl' },
     schemaDesc:
       'Independent property consultant connecting buyers with trusted Costa del Sol real estate specialists.',
@@ -97,7 +97,7 @@ const META = {
     logoAria: 'AGG.homes',
     footer: '© 2026 AGG.homes · A. Gonzalez · Johannes Boersma',
     photoAlt:
-      'A. Gonzalez, Nederlands sprekend woonadviseur voor woning kopen in Marbella en Costa del Sol',
+      'A. Gonzalez en Johannes Boersma, uw lokale contactpersonen voor vastgoed aan de Costa del Sol',
     otherLang: { href: '/en/', label: 'EN', code: 'en' },
     schemaDesc:
       'Nederlands sprekend woonadviseur voor woning kopen aan de Costa del Sol: nieuwbouw Marbella, off-market villa\'s, appartementen en exclusief vastgoed voor Nederlandse kopers.',
@@ -168,7 +168,7 @@ function schemaJson(meta) {
           '@id': `${meta.canonical}#agent`,
           name: 'A. Gonzalez',
           url: meta.canonical,
-          image: `${BASE}/images/photo.webp`,
+          image: `${BASE}/images/johannes-alfonso.jpg`,
           telephone: '+31-6-17622375',
           email: 'info@agg.homes',
           description: meta.schemaDesc,
@@ -191,7 +191,7 @@ function schemaJson(meta) {
             { '@type': 'Person', name: 'A. Gonzalez', jobTitle: 'Property consultant', knowsLanguage: ['en', 'es'] },
             { '@type': 'Person', name: 'Johannes Boersma', jobTitle: 'Property consultant', knowsLanguage: ['nl', 'en', 'es'] },
           ],
-          logo: `${BASE}/images/photo.webp`,
+          logo: `${BASE}/apple-touch-icon.png`,
           description: meta.schemaDesc,
           address: {
             '@type': 'PostalAddress',
@@ -296,7 +296,7 @@ ${OG_IMAGE_META}
   );
 
   html = html.replace(
-    'alt="A. Gonzalez, independent property consultant in Marbella"',
+    'alt="A. Gonzalez and Johannes Boersma, your local property contacts on the Costa del Sol"',
     `alt="${meta.photoAlt}"`
   );
 

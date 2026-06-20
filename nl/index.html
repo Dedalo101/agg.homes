@@ -39,7 +39,7 @@
       "@id": "https://agg.homes/nl/#agent",
       "name": "A. Gonzalez",
       "url": "https://agg.homes/nl/",
-      "image": "https://agg.homes/images/photo.webp",
+      "image": "https://agg.homes/images/johannes-alfonso.jpg",
       "telephone": "+31-6-17622375",
       "email": "info@agg.homes",
       "description": "Nederlands sprekend woonadviseur voor woning kopen aan de Costa del Sol: nieuwbouw Marbella, off-market villa's, appartementen en exclusief vastgoed voor Nederlandse kopers.",
@@ -87,7 +87,7 @@
           ]
         }
       ],
-      "logo": "https://agg.homes/images/photo.webp",
+      "logo": "https://agg.homes/apple-touch-icon.png",
       "description": "Nederlands sprekend woonadviseur voor woning kopen aan de Costa del Sol: nieuwbouw Marbella, off-market villa's, appartementen en exclusief vastgoed voor Nederlandse kopers.",
       "address": {
         "@type": "PostalAddress",
@@ -375,14 +375,13 @@
   }
 
   .contacts-grid{
-    max-width:860px;margin:0 auto;
+    max-width:880px;margin:0 auto;
     display:grid;grid-template-columns:1fr 1fr;gap:56px;
   }
   .contact-card{text-align:center;}
-  .contact-card picture{display:block;max-width:400px;margin:0 auto 22px;}
-  .contact-card img{
-    width:100%;aspect-ratio:3/4;object-fit:cover;
-    border:1px solid var(--line);background:#D8D2C4;
+  .team-photo{display:block;max-width:880px;margin:0 auto 30px;border:1px solid var(--line);}
+  .team-photo img{
+    width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#D8D2C4;
   }
   .contact-card .cc-name{font-family:var(--serif);font-size:24px;font-weight:500;}
   .contact-card .cc-role{
@@ -392,7 +391,7 @@
   .contact-card .cc-langs{font-size:13px;color:var(--ink-soft);}
   .contact-card .cc-bio{font-size:15px;color:var(--ink-soft);margin:14px auto 0;max-width:34ch;}
   @media (max-width:680px){
-    .contacts-grid{grid-template-columns:1fr;gap:44px;max-width:400px;}
+    .contacts-grid{grid-template-columns:1fr;gap:36px;}
   }
 
   .section{padding:96px 48px;}
@@ -745,12 +744,12 @@
         Twee lokale contacten, &eacute;&eacute;n vertrouwde introductie
       </h2>
     </div>
+    <picture class="team-photo">
+      <source srcset="/images/johannes-alfonso.webp?v=6" type="image/webp">
+      <img src="/images/johannes-alfonso.jpg?v=6" alt="A. Gonzalez en Johannes Boersma, uw lokale contactpersonen voor vastgoed aan de Costa del Sol" width="1280" height="720" loading="lazy" decoding="async">
+    </picture>
     <div class="contacts-grid">
       <div class="contact-card">
-        <picture>
-          <source srcset="/images/photo.webp?v=5" type="image/webp">
-          <img src="/images/photo.jpg?v=5" alt="A. Gonzalez, property consultant born and raised in Marbella" width="600" height="800" loading="lazy" decoding="async">
-        </picture>
         <div class="cc-name">A. Gonzalez</div>
         <div class="cc-role">
           
@@ -763,10 +762,6 @@
         </p>
       </div>
       <div class="contact-card">
-        <picture>
-          <source srcset="/images/johannes.webp" type="image/webp">
-          <img src="/images/johannes.jpg" alt="Johannes Boersma, Dutch-speaking property consultant on the Costa del Sol" width="240" height="320" loading="lazy" decoding="async">
-        </picture>
         <div class="cc-name">Johannes Boersma</div>
         <div class="cc-role">
           
