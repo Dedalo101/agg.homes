@@ -59,7 +59,7 @@ const META = {
     lang: 'en',
     title: 'A. Gonzalez · agg.homes — Costa del Sol property introductions',
     description:
-      'A. Gonzalez introduces Dutch and international buyers to trusted Marbella, Nueva Andalucía, Estepona and Benahávis agents. Personal, free introductions via agg.homes.',
+      'A. Gonzalez introduces buyers to trusted Marbella, Nueva Andalucía, Estepona & Benahávis agents — free, personal introductions via agg.homes.',
     canonical: `${BASE}/en/`,
     logo: 'AGG<em>.homes</em>',
     logoAria: 'AGG.homes',
@@ -89,7 +89,7 @@ const META = {
     title:
       'Woning kopen Marbella & Costa del Sol | Nieuwbouw & off-market | AGG.homes',
     description:
-      'Woning kopen in Marbella, Estepona of Benahávis? Nederlandse begeleiding bij nieuwbouw, off-market villa\'s en exclusief vastgoed. Gratis introductie bij de juiste makelaar — sinds 2011.',
+      'Woning kopen in Marbella, Estepona of Benahávis? Nederlandse begeleiding bij nieuwbouw en off-market villa\'s — gratis introductie bij de juiste makelaar.',
     keywords:
       'woning kopen Marbella, woning kopen Spanje, Costa del Sol vastgoed, nieuwbouw Marbella, villa kopen Marbella, off-market woningen, tweede woning Spanje, appartement kopen Costa del Sol, vastgoed belegging Spanje, kosten koper Spanje',
     canonical: `${BASE}/nl/`,
