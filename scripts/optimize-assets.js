@@ -14,10 +14,11 @@ const PROP_H = 660;
 const PHOTO_W = 560;
 const PHOTO_H = 560;
 
-function sharpResize(inPath, outPath, format, width, height) {
+function sharpResize(inPath, outPath, format, width, height, quality) {
   const size = height ? `resize ${width} ${height}` : `resize ${width}`;
+  const q = quality ? ` -q ${quality}` : '';
   execSync(
-    `npx --yes sharp-cli -i "${inPath}" -o "${outPath}" -f ${format} ${size}`,
+    `npx --yes sharp-cli -i "${inPath}" -o "${outPath}" -f ${format} ${size}${q}`,
     { stdio: 'inherit' }
   );
 }
@@ -59,8 +60,8 @@ async function run() {
 
   console.log('Hero images…');
   fs.writeFileSync(HERO.tmp, await download(HERO.url));
-  sharpResize(HERO.tmp, path.join(IMG, 'hero-800.webp'), 'webp', 800);
-  sharpResize(HERO.tmp, path.join(IMG, 'hero-1280.webp'), 'webp', 1280);
+  sharpResize(HERO.tmp, path.join(IMG, 'hero-800.webp'), 'webp', 800, null, 58);
+  sharpResize(HERO.tmp, path.join(IMG, 'hero-1280.webp'), 'webp', 1280, null, 64);
   fs.copyFileSync(path.join(IMG, 'hero-1280.webp'), path.join(IMG, 'hero.webp'));
   fs.unlinkSync(HERO.tmp);
 
