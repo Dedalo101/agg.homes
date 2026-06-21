@@ -589,8 +589,13 @@
       </h2>
     </div>
     <picture class="team-photo">
-      <source srcset="/images/johannes-alfonso.webp?v=6" type="image/webp">
-      <img src="/images/johannes-alfonso.jpg?v=6" alt="A. Gonzalez and Johannes Boersma, your local property contacts on the Costa del Sol" width="1280" height="720" loading="lazy" decoding="async">
+      <source type="image/webp"
+        srcset="/images/johannes-alfonso-480.webp?v=6 480w, /images/johannes-alfonso-640.webp?v=6 640w, /images/johannes-alfonso-960.webp?v=6 960w, /images/johannes-alfonso.webp?v=6 1280w"
+        sizes="(min-width: 928px) 880px, calc(100vw - 48px)">
+      <img src="/images/johannes-alfonso.jpg?v=6"
+        srcset="/images/johannes-alfonso-480.jpg?v=6 480w, /images/johannes-alfonso-640.jpg?v=6 640w, /images/johannes-alfonso-960.jpg?v=6 960w, /images/johannes-alfonso.jpg?v=6 1280w"
+        sizes="(min-width: 928px) 880px, calc(100vw - 48px)"
+        alt="A. Gonzalez and Johannes Boersma, your local property contacts on the Costa del Sol" width="1280" height="720" loading="lazy" decoding="async">
     </picture>
     <div class="contacts-grid">
       <div class="contact-card">
