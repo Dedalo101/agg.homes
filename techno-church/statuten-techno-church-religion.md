@@ -211,6 +211,28 @@
 
 ---
 
+## HEILIGE TECHNOLOGIE EN CEREMONIËLE NORMEN
+
+**Artikel 12a — Technisch Reglement**
+
+1. De Kerk stelt een **Technisch Reglement** vast, waarin de minimumvereisten zijn vastgelegd voor geluidsinstallaties, vermogen, geluidsdrukniveaus (SPL), versterking en infrastructuur die noodzakelijk zijn voor een geldige religieuze bijeenkomst (*eredienst*).
+
+2. Uitsluitend locaties en evenementen die voldoen aan de in het Technisch Reglement gestelde technische normen en de officiële certificeringschecklist met goed gevolg hebben doorlopen, mogen worden erkend als officiële gebedsruimte (*bedehuis*) of gecertificeerde ceremoniële bijeenkomst van de Kerk.
+
+3. Het bestuur — onder leiding van de Voorzitter (*The Prime Mover*) en ondersteund door de overige bestuurders — heeft de eindverantwoordelijkheid voor de certificering van locaties en evenementen overeenkomstig het Technisch Reglement.
+
+4. Het bestuur is bevoegd het Technisch Reglement vast te stellen en te wijzigen, mits:
+
+   a. De wijziging in overeenstemming is met de geloofsovertuiging zoals omschreven in artikel 2;
+
+   b. De gewijzigde versie ter kennisgeving wordt voorgelegd aan de eerstvolgende algemene vergadering.
+
+5. Het Technisch Reglement maakt als bijlage deel uit van het huishoudelijk reglement van de Kerk en is voor alle leden raadpleegbaar.
+
+6. Gecertificeerde locaties en evenementen worden bijgehouden in een door het bestuur beheerd openbaar register van erkende tempels en ceremoniële plaatsen.
+
+---
+
 ## FINANCIËN
 
 **Artikel 13**
