@@ -10,28 +10,49 @@
 1. Het kerkgenootschap draagt de naam: **Techno Church Religion**, hierna te noemen "de Kerk".
 2. De Kerk heeft haar zetel in de gemeente **Amsterdam**, Nederland.
 3. De Kerk is opgericht op _____________ (datum oprichting).
+4. De Kerk is ingeschreven bij de Kamer van Koophandel (KVK) middels formulier 27 en streeft naar erkenning als Algemeen Nut Beogende Instelling (ANBI) bij de Belastingdienst.
 
 ---
 
 ## GRONDSLAG EN GELOOFSOVERTUIGING
 
-**Artikel 2**
+**Artikel 2 — De Heilige Overtuiging**
 
-1. De Kerk is gebaseerd op de overtuiging dat technomuziek een heilige en spirituele praktijk is — een vorm van collectief gebed door ritme, geluid en beweging.
+1. De Kerk is gegrond op de geloofsovertuiging dat **ritmische eenheid een transcendente, goddelijke kracht is** — niet slechts een fysisch verschijnsel, maar een immanente heilige aanwezigheid die alle wezens met elkaar en met het Universele Geheel verbindt.
 
-2. De gelovigen van de Kerk erkennen het volgende als kern van hun geloof:
+2. De gelovigen van de Kerk erkennen de volgende theologische grondbeginselen:
 
-   a. De repeterende beat van technomuziek weerspiegelt de puls van het bestaan en de aanwezigheid van het goddelijke in alle dingen;
+   a. **De Goddelijke Kracht** — Wij geloven in de transcendente kracht van ritmische eenheid om het ego te ontbinden en het individu te verbinden met het Universele Geheel. De Beat, de Frequentie en de Collectieve Effervescentie zijn geen louter fysische verschijnselen, maar vormen de immanente aanwezigheid van het goddelijke dat zich openbaart door middel van geluid, beweging en gemeenschap;
 
-   b. De dansvloer is de tempel — een geheiligde ruimte van transcendentie, verbinding en gemeenschap;
+   b. **Het Heilige Ritueel** — De eredienst (*Liturgie van het Geluid*) is een gewijde ruimte van rituele reiniging en verlichting, waarbij de gemeente door middel van gesynchroniseerde beweging, collectieve ademhaling en gemeenschappelijke overgave aan de klank een staat van spirituele transcendentie bereikt;
 
-   c. De DJ vervult de rol van voorganger: een bemiddelaar tussen de gemeente en het goddelijke, die door middel van geluid de geest begeleidt naar verlichting;
+   c. **De Voorganger als Geestelijk Gids** — De ritueel facilitator (*voorganger*) is geen muzikant of artiest, maar een geestelijk gids en bewaker van het geluid, wiens taak het is de gemeente te begeleiden naar de verbinding met het goddelijke;
 
-   d. Gezamenlijke muzikale samenkomsten zijn erediensten, waarbij de deelnemers in gemeenschap treden met het hogere en met elkaar;
+   d. **Liminale Transformatie** — De gewijde ruimte van de eredienst is een liminale drempelplaats — een *andere ruimte* in de zin van Foucault — waar gewone sociale structuren worden opgeheven, het ego zich oplost in de gemeenschap, en de gelovige getransformeerd terugkeert in de wereld;
 
-   e. De Kerk erkent dat het goddelijke aanwezig is in collectieve extase, herhaling, en de opheffing van het afzonderlijke ego in de massa van de gemeente.
+   e. **Collectieve Effervescentie** — Wij erkennen, in navolging van de sociaal-theologische traditie (Durkheim, 1912; Turner, 1969; Sylvan, 2005), dat de energie die wordt gegenereerd door collectieve ritmische aanbidding een heilige kracht is die individuen transformeert tot iets groters dan zijzelf — een zuivere uitdrukking van het goddelijke in de gemeenschap.
 
-3. De Kerk respecteert de vrijheid van geloof van elke gelovige en legt geen dogma op dat onverenigbaar is met persoonlijke spirituele beleving.
+3. De methode van aanbidding is geluid en ritmische beweging. De wet erkent dat de methode van gebed en aanbidding door de geloofsgemeenschap zelf wordt bepaald; de Kerk stelt dat haar methode gelijkwaardig is aan gebed, gezang, meditatie of iedere andere erkende religieuze praktijk.
+
+4. De Kerk respecteert de gewetensvrijheid van elke gelovige en legt geen dogma op dat onverenigbaar is met persoonlijke spirituele beleving.
+
+---
+
+## ETHISCHE GRONDSLAG — DE VIER ZUILEN VAN HEILIG GEDRAG
+
+**Artikel 2a — De Morele Code**
+
+1. De Kerk onderschrijft een ethische grondslag die is afgeleid van de spirituele waarden van de geloofsgemeenschap. Deze morele code geldt als religieus gebod voor alle leden en is niet slechts een sociale gedragsregel, maar een voorwaarde voor geestelijke groei en gemeenschapszin:
+
+   a. **Vrede** (*Vrede*) — Wij geloven dat de gewijde ruimte vrij moet zijn van geweld, agressie en disrespect. Vrede is de eerste voorwaarde voor transcendentie;
+
+   b. **Liefde** (*Verbondenheid*) — Wij geloven in de fundamentele verbondenheid van alle mensen in de aanbidding. Op de dansvloer zijn wij allen gelijk;
+
+   c. **Eenheid** (*Collectiviteit*) — Wij geloven dat het individu zijn volste zelf bereikt niet in afzondering, maar in de gemeenschap met anderen. Eenheid is de vrucht van de eredienst;
+
+   d. **Respect** (*Eerbied*) — Wij geloven in eerbied voor de gewijde ruimte, de voorganger, de medegelovige, en het geluid zelf.
+
+2. Handelen in strijd met de Vier Zuilen van Heilig Gedrag is grond voor schorsing of ontzetting uit het lidmaatschap.
 
 ---
 
@@ -39,65 +60,71 @@
 
 **Artikel 3**
 
-1. De Kerk stelt zich ten doel:
+1. De Kerk stelt zich uitsluitend en rechtstreeks ten doel:
 
-   a. Het beoefenen, bevorderen en beschermen van de religieuze praktijk van technomuziek als collectieve gebedshandeling;
+   a. Het uitoefenen, bevorderen en beschermen van de religieuze praktijk van **de Geestelijke Oefening van Ritmische Eenheid** als primaire vorm van collectieve godsdienstbeoefening;
 
-   b. Het organiseren en faciliteren van erediensten in de vorm van technomuziekevenementen, bijeenkomsten en ceremonies;
+   b. Het organiseren en faciliteren van **erediensten** — *Liturgieën van het Geluid* — als rituele bijeenkomsten voor collectieve aanbidding, geestelijke reiniging en religieuze gemeenschapsvorming;
 
-   c. Het opbouwen en onderhouden van een geloofsgemeenschap van leden die de spirituele waarde van technomuziek erkennen;
+   c. Het opbouwen en onderhouden van een **geloofsgemeenschap** (*gemeente*) van gelovigen die de spirituele waarde van ritmische eenheid erkennen en actief beoefenen;
 
-   d. Het vertegenwoordigen van de belangen van de gemeenschap in maatschappelijke, culturele en juridische zin;
+   d. Het **verspreiden van de geloofsovertuiging** door middel van publicaties, onderwijs, gemeenschappelijke bijeenkomsten en digitale middelen;
 
-   e. Het verlenen van voordelen aan leden bij het bijwonen van erkende ceremoniële evenementen, teneinde deelname aan de religieuze praktijk te bevorderen;
+   e. Het **instandhouden van gewijde ruimten** (*bedehuis*) en het certificeren van locaties die voldoen aan de heilige technische normen van de Kerk, zoals vastgelegd in het Technisch Reglement;
 
-   f. Het sluiten van samenwerkingen met evenementenorganisatoren die de ceremoniële bijeenkomsten van de Kerk faciliteren of erkennen.
+   f. Het **verlenen van geestelijke begeleiding** aan leden van de geloofsgemeenschap;
 
-2. De Kerk beoogt niet het maken van winst voor haar bestuurders of leden anders dan in de vorm van geestelijke en gemeenschappelijke baten.
+   g. Het **vertegenwoordigen van de belangen** van de geloofsgemeenschap in maatschappelijke, culturele en juridische zin.
+
+2. De Kerk beoogt uitdrukkelijk **niet** het organiseren van evenementen voor vermaak of commercieel gewin. De primaire doelstelling is te allen tijde religieuze aanbidding en gemeenschapsvorming. Financiële activiteiten zijn uitsluitend dienend aan de religieuze missie.
+
+3. Een eventueel financieel batig saldo wordt uitsluitend aangewend ten behoeve van de religieuze doelstellingen van de Kerk. Uitkering van winst aan bestuurders, leden of derden is uitdrukkelijk uitgesloten.
 
 ---
 
-## LIDMAATSCHAP
+## LIDMAATSCHAP — DE GEMEENTE
 
 **Artikel 4 — Verkrijging van lidmaatschap**
 
-1. Lidmaatschap van de Kerk staat open voor iedere natuurlijke persoon die:
+1. Leden van de Kerk zijn **gelovigen** die deelnemen aan de godsdienstbeoefening, niet consumenten van een product of dienst. Het lidmaatschap bevestigt de religieuze verbondenheid van het individu met de geloofsgemeenschap.
+
+2. Lidmaatschap staat open voor iedere natuurlijke persoon die:
 
    a. De geloofsovertuiging zoals omschreven in artikel 2 onderschrijft of oprecht wenst te onderzoeken;
 
-   b. De jaarlijkse lidmaatschapsbijdrage voldoet zoals vastgesteld door het bestuur;
+   b. De Morele Code zoals omschreven in artikel 2a erkent en nastreeft;
 
-   c. Instemt met de statuten en het huishoudelijk reglement van de Kerk.
+   c. De jaarlijkse religieuze bijdrage (*kerkbijdrage*) voldoet zoals vastgesteld door het bestuur;
 
-2. Aanmelding geschiedt schriftelijk of digitaal via de daartoe door het bestuur aangewezen kanalen.
+   d. Instemt met de statuten en het huishoudelijk reglement van de Kerk.
 
-3. Het bestuur beslist over toelating. Weigering is mogelijk bij strijd met de belangen of waarden van de Kerk.
+3. Aanmelding geschiedt schriftelijk of digitaal. Het bestuur beslist over toelating. Weigering is mogelijk bij strijd met de waarden of het welzijn van de geloofsgemeenschap.
 
-**Artikel 5 — Lidmaatschapsbijdrage**
+**Artikel 5 — Kerkbijdrage**
 
-1. Elk lid betaalt een jaarlijkse lidmaatschapsbijdrage. De hoogte hiervan wordt jaarlijks vastgesteld door het bestuur.
+1. Elk lid voldoet een jaarlijkse **kerkbijdrage** ter ondersteuning van de religieuze missie van de Kerk. De hoogte hiervan wordt jaarlijks vastgesteld door het bestuur.
 
-2. Het bestuur kan verschillende lidmaatschapscategorieën instellen, elk met bijbehorende bijdrage en rechten, waaronder maar niet beperkt tot:
+2. Het bestuur kan de volgende geloofscategorieën instellen:
 
-   - **Novice** (beginnend gelovige): basistoegang en standaard korting op erkende ceremoniën;
-   - **Devotee** (toegewijd gelovige): uitgebreide rechten en hogere korting op erkende ceremoniën;
-   - **Elder** (ouderling): volledige rechten, maximale korting, en adviserende stem in de gemeente.
+   - **Novice** (aankomend gelovige): toegang tot de gemeenschap en deelname aan erediensten;
+   - **Devotee** (toegewijd gelovige): uitgebreide rechten en faciliteiten binnen de geloofsgemeenschap;
+   - **Elder** (ouderling): volledige rechten en adviserende stem in de gemeente.
 
-3. Bij niet-tijdige betaling wordt het lidmaatschap opgeschort totdat de bijdrage is voldaan.
+3. De kerkbijdrage verleent geen recht op een aandeel in het vermogen van de Kerk. Evenmin geeft het lidmaatschap aanspraak op restitutie van bijdragen bij opzegging.
 
 **Artikel 6 — Rechten van leden**
 
 1. Leden hebben recht op:
 
-   a. Een geldig lidmaatschapsbewijs (fysiek of digitaal) waarmee zij zich kunnen legitimeren bij erkende ceremoniële evenementen;
+   a. Een geldig bewijs van religieus lidmaatschap (fysiek of digitaal);
 
-   b. Korting op toegangsprijzen bij erkende ceremoniële evenementen, overeenkomstig de door het bestuur vastgestelde tarieven en samenwerkingsafspraken;
+   b. Deelname aan erediensten en overige religieuze bijeenkomsten van de Kerk;
 
-   c. Deelname aan gemeenschappelijke bijeenkomsten en diensten van de Kerk;
+   c. Faciliteiten bij erkende gewijde ruimten (*bedehuis*), overeenkomstig de door het bestuur vastgestelde voorwaarden;
 
-   d. Toegang tot communicatiekanalen en publicaties van de Kerk.
+   d. Toegang tot geestelijke begeleiding, publicaties en communicatiekanalen van de Kerk.
 
-2. Stemrecht in de algemene vergadering komt toe aan leden van de categorie Devotee en Elder, tenzij het huishoudelijk reglement anders bepaalt.
+2. Stemrecht in de algemene vergadering komt toe aan leden van de categorie Devotee en Elder.
 
 **Artikel 7 — Einde van lidmaatschap**
 
@@ -107,9 +134,9 @@
 
    b. Overlijden van het lid;
 
-   c. Niet-betaling van de jaarlijkse bijdrage na aanmaning;
+   c. Niet-betaling van de jaarlijkse kerkbijdrage na aanmaning;
 
-   d. Ontzetting door het bestuur bij handelen in strijd met de statuten of ernstige beschadiging van de belangen of naam van de Kerk.
+   d. Ontzetting door het bestuur bij handelen in strijd met de statuten of de Morele Code, of bij ernstige beschadiging van de belangen of naam van de Kerk.
 
 2. Tegen ontzetting staat beroep open bij de algemene vergadering binnen 30 dagen.
 
@@ -121,9 +148,9 @@
 
 1. De Kerk wordt bestuurd door een bestuur bestaande uit minimaal drie personen:
 
-   - **Voorzitter** (The Prime Mover)
-   - **Secretaris** (Keeper of the Sacred Records)
-   - **Penningmeester** (Guardian of the Offering)
+   - **Voorzitter** (*The Prime Mover*) — geestelijk leider en eindverantwoordelijke van de Kerk
+   - **Secretaris** (*Keeper of the Sacred Records*) — belast met de administratieve en communicatieve taken
+   - **Penningmeester** (*Guardian of the Offering*) — belast met het financieel beheer
 
 2. Bestuursleden worden benoemd door de algemene vergadering voor een termijn van twee jaar en zijn herbenoembaar.
 
@@ -135,7 +162,7 @@
 
 2. De Kerk wordt in rechte vertegenwoordigd door de voorzitter tezamen met de secretaris, of door twee bestuursleden gezamenlijk.
 
-3. Het bestuur stelt een huishoudelijk reglement op met nadere regels over de organisatie, de ceremonies en de samenwerking met externe partijen.
+3. Het bestuur stelt een huishoudelijk reglement op, alsmede een **Boek van Rituelen** (*Ritus van de Gemeenschap*) met nadere regels over de geloofsuitoefening, de erediensten en de geestelijke praktijken van de Kerk.
 
 **Artikel 10 — Vergadering van het bestuur**
 
@@ -155,21 +182,21 @@
    | Secretaris | Keeper of the Sacred Records | Deeltijd (ca. 8 uur/week) | € 400 – € 1.000 |
    | Penningmeester | Guardian of the Offering | Deeltijd (ca. 8 uur/week) | € 400 – € 1.000 |
 
-3. De in lid 2 genoemde bandbreedtes gelden voor de opstartfase van de Kerk. Naarmate de inkomsten van de Kerk groeien, kan de algemene vergadering besluiten de bezoldiging naar rato aan te passen, met dien verstande dat de bezoldiging te allen tijde:
+3. De bezoldiging voldoet te allen tijde aan de volgende voorwaarden:
 
-   a. Proportioneel blijft aan de omvang van de feitelijk verrichte werkzaamheden;
+   a. Proportioneel aan de omvang van de feitelijk verrichte werkzaamheden;
 
-   b. In verhouding staat tot de totale inkomsten en het vermogen van de Kerk;
+   b. In verhouding tot de totale inkomsten en het vermogen van de Kerk;
 
-   c. Niet leidt tot een situatie waarbij meer dan 25% van de totale inkomsten van de Kerk wordt aangewend voor bezoldiging van bestuurders gezamenlijk;
+   c. Niet meer dan 25% van de totale inkomsten van de Kerk wordt aangewend voor bezoldiging van bestuurders gezamenlijk;
 
    d. Voldoet aan de eisen voor behoud van eventuele ANBI-status, zoals gesteld door de Belastingdienst.
 
-4. Naast de bezoldiging hebben bestuursleden recht op vergoeding van werkelijk gemaakte en aantoonbare onkosten die zij in het kader van hun functie hebben gemaakt, op vertoon van bewijsstukken.
+4. Naast de bezoldiging hebben bestuursleden recht op vergoeding van werkelijk gemaakte en aantoonbare onkosten op vertoon van bewijsstukken.
 
 5. De bezoldiging en onkostenvergoedingen worden opgenomen in de jaarlijkse financiële verantwoording aan de algemene vergadering.
 
-6. Bij het ontbreken van voldoende inkomsten in enig jaar kan het bestuur besluiten de bezoldiging tijdelijk geheel of gedeeltelijk op te schorten. Uitgestelde bezoldiging wordt alsnog uitbetaald zodra de financiële positie van de Kerk dit toelaat.
+6. Bij het ontbreken van voldoende inkomsten kan het bestuur de bezoldiging tijdelijk opschorten. Uitgestelde bezoldiging wordt alsnog uitbetaald zodra de financiële positie dit toelaat.
 
 ---
 
@@ -197,17 +224,19 @@
 
 ---
 
-## CEREMONIËLE EVENEMENTEN EN PARTNERSCHAPPEN
+## EREDIENSTEN EN GEWIJDE RUIMTEN
 
-**Artikel 12**
+**Artikel 12 — Erediensten**
 
-1. Het bestuur kan technomuziekevenementen erkennen als officiële ceremoniële bijeenkomst van de Kerk, mits deze voldoen aan de door het bestuur gestelde criteria.
+1. De primaire religieuze activiteit van de Kerk bestaat uit het houden van **erediensten** — *Liturgieën van het Geluid* — als collectieve geloofsoefeningen. Een eredienst is geen entertainmentevenement, maar een gewijde bijeenkomst voor religieuze aanbidding.
 
-2. Het bestuur sluit samenwerkingsovereenkomsten met organisatoren van erkende ceremoniële evenementen, waarin de kortingsrechten voor leden worden vastgelegd.
+2. Het bestuur kan bijeenkomsten erkennen als officiële eredienst van de Kerk, mits deze voldoen aan de theologische en technische normen zoals vastgelegd in het huishoudelijk reglement en het Technisch Reglement.
 
-3. De Kerk kan een ceremoniële coördinatiebijdrage ontvangen van samenwerkende organisatoren als vergoeding voor de bemiddeling en gemeenschapsopbouw.
+3. De voorganger (*ritueel facilitator*) bij een eredienst is een **geestelijk gids en bewaker van het geluid**, niet een artiest of uitvoerder. Zijn of haar taak is het begeleiden van de gemeente naar transcendentie.
 
-4. Alle inkomsten worden aangewend voor de doelstellingen van de Kerk zoals omschreven in artikel 3.
+4. Het bestuur kan samenwerkingsovereenkomsten sluiten met organisatoren van erkende erediensten, waarbij de rechten van gelovigen bij deelname worden vastgelegd.
+
+5. De Kerk kan een **religieuze coördinatiebijdrage** ontvangen van samenwerkende organisatoren als vergoeding voor de geestelijke dienstverlening en gemeenschapsopbouw. Alle inkomsten worden aangewend voor de religieuze doelstellingen van de Kerk.
 
 ---
 
@@ -215,21 +244,15 @@
 
 **Artikel 12a — Technisch Reglement**
 
-1. De Kerk stelt een **Technisch Reglement** vast, waarin de minimumvereisten zijn vastgelegd voor geluidsinstallaties, vermogen, geluidsdrukniveaus (SPL), versterking en infrastructuur die noodzakelijk zijn voor een geldige religieuze bijeenkomst (*eredienst*).
+1. De Kerk stelt een **Technisch Reglement** vast, waarin de minimumvereisten zijn vastgelegd voor geluidsinstallaties, vermogen, geluidsdrukniveaus (SPL), versterking en infrastructuur die noodzakelijk zijn voor een geldige eredienst.
 
-2. Uitsluitend locaties en evenementen die voldoen aan de in het Technisch Reglement gestelde technische normen en de officiële certificeringschecklist met goed gevolg hebben doorlopen, mogen worden erkend als officiële gebedsruimte (*bedehuis*) of gecertificeerde ceremoniële bijeenkomst van de Kerk.
+2. Uitsluitend locaties en evenementen die voldoen aan het Technisch Reglement en de certificeringschecklist mogen worden erkend als officieel **bedehuis** of gecertificeerde eredienst van de Kerk.
 
-3. Het bestuur — onder leiding van de Voorzitter (*The Prime Mover*) en ondersteund door de overige bestuurders — heeft de eindverantwoordelijkheid voor de certificering van locaties en evenementen overeenkomstig het Technisch Reglement.
+3. Het bestuur heeft de eindverantwoordelijkheid voor de certificering van locaties overeenkomstig het Technisch Reglement.
 
-4. Het bestuur is bevoegd het Technisch Reglement vast te stellen en te wijzigen, mits:
+4. Het Technisch Reglement maakt als bijlage deel uit van het huishoudelijk reglement van de Kerk en is voor alle leden raadpleegbaar.
 
-   a. De wijziging in overeenstemming is met de geloofsovertuiging zoals omschreven in artikel 2;
-
-   b. De gewijzigde versie ter kennisgeving wordt voorgelegd aan de eerstvolgende algemene vergadering.
-
-5. Het Technisch Reglement maakt als bijlage deel uit van het huishoudelijk reglement van de Kerk en is voor alle leden raadpleegbaar.
-
-6. Gecertificeerde locaties en evenementen worden bijgehouden in een door het bestuur beheerd openbaar register van erkende tempels en ceremoniële plaatsen.
+5. Gecertificeerde locaties worden bijgehouden in een openbaar register van erkende tempels en gewijde plaatsen.
 
 ---
 
@@ -243,7 +266,17 @@
 
 3. De penningmeester legt jaarlijks verantwoording af aan de algemene vergadering door middel van een financieel overzicht.
 
-4. Het vermogen van de Kerk wordt uitsluitend aangewend ten behoeve van de in artikel 3 omschreven doelstellingen.
+4. Het vermogen van de Kerk wordt uitsluitend aangewend ten behoeve van de in artikel 3 omschreven religieuze doelstellingen. Uitkering van winst of vermogen aan bestuurders of leden is uitdrukkelijk uitgesloten.
+
+---
+
+## UBO-REGISTRATIE
+
+**Artikel 13a**
+
+1. De bestuurders van de Kerk worden geregistreerd in het UBO-register (Ultimate Beneficial Owners) overeenkomstig de Wet ter voorkoming van witwassen en financieren van terrorisme (Wwft).
+
+2. De Kerk maakt aanspraak op de religieuze uitzondering op grond waarvan de persoonsgegevens van de bestuurders niet openbaar worden gemaakt in het publiek toegankelijke uittreksel van het UBO-register, conform de daarvoor geldende wettelijke regelgeving.
 
 ---
 
